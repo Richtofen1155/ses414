@@ -72,6 +72,20 @@
       <Mass>1</Mass>
     </statBases>
   </ThingDef>
+  
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>TightVagina</defName>
+    <label>tight vagina</label>
+    <description>A severed tight vagina, whatever that means.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>  
 
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>Micropenis</defName>
@@ -130,7 +144,63 @@
       <Mass>2.00</Mass>
     </statBases>
   </ThingDef>
-
+  
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>HorsePenis</defName>
+    <label>horse penis</label>
+    <description>A severed horse penis from a centaur. Huge for a human.</description>
+    <graphicData>
+      <texPath>huge_penis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>CatPenis</defName>
+    <label>cat penis</label>
+    <description>A severed catgirl penis. Long, thin and barbed.</description>
+    <graphicData>
+      <texPath>penis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>DogPenis</defName>
+    <label>cat penis</label>
+    <description>A severed dog penis. Thick and knotted.</description>
+    <graphicData>
+      <texPath>penis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>DragonPenis</defName>
+    <label>dragon penis</label>
+    <description>A severed dragon penis. Thick and HARD.</description>
+    <graphicData>
+      <texPath>penis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>    
+  
   <!-- Simple prosthetic privates -->
 
   <ThingDef ParentName="BodyPartArtificialBase">

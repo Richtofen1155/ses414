@@ -209,7 +209,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /E /Y "C:\Projects\RimWorld\RJW" "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\"
-del "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\Assemblies\HugsLib.*"
-del "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\Assemblies\RimWorldChildren.*"</PostBuildEvent>
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
