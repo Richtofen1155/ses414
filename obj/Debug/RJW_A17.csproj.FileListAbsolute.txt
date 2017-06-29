@@ -6,9 +6,5 @@ C:\Users\brian\My Projects\RimWorld\RJW\Assemblies\RimWorldChildren.pdb
 C:\Users\brian\My Projects\RimWorld\RJW\Assemblies\HugsLib.xml
 C:\Users\brian\My Projects\RimWorld\RJW\obj\Debug\RJW.dll
 C:\Projects\RimWorld\RJW\Assemblies\RJW.dll
-C:\Projects\RimWorld\RJW\Assemblies\HugsLib.dll
-C:\Projects\RimWorld\RJW\Assemblies\RimWorldChildren.dll
-C:\Projects\RimWorld\RJW\Assemblies\RimWorldChildren.pdb
-C:\Projects\RimWorld\RJW\Assemblies\HugsLib.xml
 C:\Projects\RimWorld\RJW\obj\Debug\RJW.dll
 C:\Projects\RimWorld\RJW\obj\Debug\RJW_A17.csprojResolveAssemblyReference.cache
