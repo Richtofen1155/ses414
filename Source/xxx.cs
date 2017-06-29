@@ -27,7 +27,8 @@ namespace rjw
 
 		public const float no_parter_ability = 0.65f;
 
-		public static TraitDef nymphomaniac = TraitDef.Named ("Nymphomaniac");
+		public static TraitDef nymphomaniac = TraitDef.Named("Nymphomaniac");
+        public static TraitDef rapist = TraitDef.Named("Rapist");
 
 		public static HediffDef immunodeficiency = DefDatabase<HediffDef>.GetNamed ("Immunodeficiency");
 
