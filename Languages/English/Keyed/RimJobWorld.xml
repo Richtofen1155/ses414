@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <!-- Bed -->
+  <ForWhoreUse>For Whore Use</ForWhoreUse>
+  <WhoreBedFormat>whore {0}</WhoreBedFormat>
+  <CommandBedSetAsWhoreLabel>For whores</CommandBedSetAsWhoreLabel>
+  <CommandBedSetAsWhoreDesc>Whether this bed is for whores.</CommandBedSetAsWhoreDesc>
+  
+</LanguageData>

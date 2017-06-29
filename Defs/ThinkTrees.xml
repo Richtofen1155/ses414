@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ThinkTrees>
+
+  <ThinkTreeDef>
+    <defName>FapTree</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalLyingDown">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Fappin">
+              <subNodes>
+               <li Class="rjw.JobGiver_DoFappin" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>AnimalFapTree</defName>
+    <insertTag>Animal_PostMentalState</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalLyingDown">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Fappin">
+              <subNodes>
+                <li Class="rjw.JobGiver_DoFappin" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Check to "use" comfort prisoners before looking for work to do -->
+  <ThinkTreeDef>
+    <defName>ColonistSexualEmergencyTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalCanRapeCP">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_RapeCP">
+              <subNodes>
+                <li Class="rjw.JobGiver_ComfortPrisonerRape" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Check to "use" comfort prisoners before looking for work to do -->
+  <ThinkTreeDef>
+    <defName>AnimalSexualEmergencyTree</defName>
+    <insertTag>Animal_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalCanRapeCP">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_RapeCP">
+              <subNodes>
+                <li Class="rjw.JobGiver_ComfortPrisonerRape" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- If they're horny, nymphs will find someone to fuck before doing any work -->
+  <ThinkTreeDef>
+    <defName>NymphSexualEmergencyTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+	<li Class="rjw.ThinkNode_ConditionalNympho">
+	  <subNodes>
+	    <li Class="rjw.ThinkNode_ConditionalHorny">
+	      <subNodes>
+		<li Class="rjw.JobGiver_NymphJoinInBed" />
+	      </subNodes>
+	    </li>
+	  </subNodes>
+	</li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <!-- Nymphs will always look for sex if they have nothing else to do -->
+  <ThinkTreeDef>
+    <defName>NymphRapeTree</defName>
+    <insertTag>Humanlike_PostMain</insertTag>
+    <insertPriority>15</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+	<li Class="rjw.ThinkNode_ConditionalNympho">
+	  <subNodes>
+	    <li Class="rjw.JobGiver_NymphJoinInBed" />
+	  </subNodes>
+	</li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</ThinkTrees>

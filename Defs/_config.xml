@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <rjw.config>
+    <defName>the_one</defName>
+    <animals_enabled>true</animals_enabled>
+    <comfort_prisoners_enabled>true</comfort_prisoners_enabled>
+    <!-- colonists_can_be_comfort_prisoners doesn't actually do anything yet -->
+    <colonists_can_be_comfort_prisoners>true</colonists_can_be_comfort_prisoners>
+    <cum_enabled>true</cum_enabled>
+    <rape_me_sticky_enabled>false</rape_me_sticky_enabled>
+    <sounds_enabled>true</sounds_enabled>
+    <stds_enabled>true</stds_enabled>
+    <bondage_gear_enabled>true</bondage_gear_enabled>
+    <!-- nymph_joiners_enabled has no effect any more -->
+    <nymph_joiners_enabled>true</nymph_joiners_enabled>
+
+    <show_regular_dick_and_vag>true</show_regular_dick_and_vag>
+
+    <!-- Logs the process of handing out STDs after sex for debug purposes (or for anyone who's curious) -->
+    <std_show_roll_to_catch>false</std_show_roll_to_catch>
+    <!-- STD infections must be at least this severe to spread between pawns -->
+    <std_min_severity_to_pitch>0.21</std_min_severity_to_pitch>
+    <!-- "Clean" rooms (cleanliness stat >= 0) have their stat multiplied by this amount -->
+    <std_env_pitch_cleanliness_exaggeration>2.0</std_env_pitch_cleanliness_exaggeration>
+    <!-- "Dirty" rooms (cleanliness stat < 0) have their stat multiplied by this amount -->
+    <std_env_pitch_dirtiness_exaggeration>0.5</std_env_pitch_dirtiness_exaggeration>
+    <!-- Cleanliness stat for sex outside of a room -->
+    <std_outdoor_cleanliness>-1.0</std_outdoor_cleanliness>
+
+    <!-- Pawns under the free-for-all age can only fuck other pawns that are within two years of age of themselves
+         and cannot be designated for rape. -->
+    <sex_free_for_all_age>16</sex_free_for_all_age>
+    <!-- Minimum age for pawns to have sex -->
+    <sex_minimum_age>12</sex_minimum_age>
+
+    <!-- Nymphs won't join-in-bed colonists above this threshold and raping pawns are less likely to hit prisoners
+         above this threshold. For reference, the core game considers "severe" pain to be 0.8. -->
+    <significant_pain_threshold>0.6</significant_pain_threshold>
+    <max_nymph_fraction>0.99</max_nymph_fraction>
+    <opp_inf_initial_immunity>0.55</opp_inf_initial_immunity>
+    <comfort_prisoner_rape_mtbh_mul>3.0</comfort_prisoner_rape_mtbh_mul>
+    <nymph_spawn_with_std_mul>3.0</nymph_spawn_with_std_mul>
+    <chance_to_rim>0.0075</chance_to_rim>
+  </rjw.config>
+
+</Defs>

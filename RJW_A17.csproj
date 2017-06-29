@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{50C4536E-7251-41D9-BF1B-B5EC836D0AED}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Source</RootNamespace>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <UseMSBuildEngine>False</UseMSBuildEngine>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>RJW</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\Assemblies\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>Assemblies\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\Assemblies</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HugsLib">
+      <HintPath>..\..\..\..\..\..\Games\Steam\steamapps\workshop\content\294100\818773962\Assemblies\HugsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Games\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Games\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source\Building_Bed_Patch.cs" />
+    <Compile Include="Source\Building_WhoreBed.cs" />
+    <Compile Include="Source\config.cs" />
+    <Compile Include="Source\Genital_Helper.cs" />
+    <Compile Include="Source\HugsLibInj.cs" />
+    <Compile Include="Source\JobDriver_ComfortPrisonerRapin.cs" />
+    <Compile Include="Source\JobDriver_GettinRaped.cs" />
+    <Compile Include="Source\JobGiver_ComfortPrisonerRape.cs" />
+    <Compile Include="Source\MapCom_Injector.cs" />
+    <Compile Include="Source\comfort_prisoners.cs" />
+    <Compile Include="Source\Designator_ComfortPrisoner.cs" />
+    <Compile Include="Source\Hediff_ID.cs" />
+    <Compile Include="Source\IncidentWorker_NymphJoins.cs" />
+    <Compile Include="Source\IncidentWorker_Sexualize.cs" />
+    <Compile Include="Source\nymph_generator.cs" />
+    <Compile Include="Source\nymph_backstories.cs" />
+    <Compile Include="Source\CORE_EXPOSED.cs" />
+    <Compile Include="Source\chastity_belt.cs" />
+    <Compile Include="Source\patches_bondage_gear.cs" />
+    <Compile Include="Source\patches_lovin.cs" />
+    <Compile Include="Source\Recipe_InstallPrivates_Female.cs" />
+    <Compile Include="Source\Recipe_InstallPrivates_Male.cs" />
+    <Compile Include="Source\Recipe_Nullify.cs" />
+    <Compile Include="Source\bondage_gear.cs" />
+    <Compile Include="Source\std.cs" />
+    <Compile Include="Source\ThinkNode_ChancePerHour_RapeCP.cs" />
+    <Compile Include="Source\ThinkNode_ConditionalCanRapeCP.cs" />
+    <Compile Include="Source\ThinkNode_ConditionalFrustrated.cs" />
+    <Compile Include="Source\ThoughtWorker_ItchyCrotch.cs" />
+    <Compile Include="Source\ThoughtWorker_SyphiliticThoughts.cs" />
+    <Compile Include="Source\ThoughtWorker_WastingAway.cs" />
+    <Compile Include="Source\xxx.cs" />
+    <Compile Include="Source\First.cs" />
+    <Compile Include="Source\Hediff_InitPrivates.cs" />
+    <Compile Include="Source\Hediff_InvisibleImplant.cs" />
+    <Compile Include="Source\IncidentWorker_TestInc.cs" />
+    <Compile Include="Source\JobDriver_Fappin.cs" />
+    <Compile Include="Source\JobDriver_GettinLoved.cs" />
+    <Compile Include="Source\JobDriver_LovinPP.cs" />
+    <Compile Include="Source\JobDriver_NymphJoinInBed.cs" />
+    <Compile Include="Source\JobGiver_DoFappin.cs" />
+    <Compile Include="Source\JobGiver_NymphJoinInBed.cs" />
+    <Compile Include="Source\Need_Sex.cs" />
+    <Compile Include="Source\Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\ThinkNode_ChancePerHour_Fappin.cs" />
+    <Compile Include="Source\ThinkNode_ConditionalHorny.cs" />
+    <Compile Include="Source\ThinkNode_ConditionalNympho.cs" />
+    <Compile Include="Source\ThoughtWorker_NeedSex.cs" />
+    <Compile Include="Source\CompUnlockBondageGear.cs" />
+    <Compile Include="Source\CompStampedApparelKey.cs" />
+    <Compile Include="Source\JobDriver_StruggleInBondageGear.cs" />
+    <Compile Include="Source\CompHoloCryptoStamped.cs" />
+    <Compile Include="Source\CompBondageGear.cs" />
+    <Compile Include="Source\CompGetBondageGear.cs" />
+    <Compile Include="Source\JobDriver_UseItemOn.cs" />
+    <Compile Include="Source\ThoughtWorker_Bound.cs" />
+    <Compile Include="Source\Recipe_ForceOffGear.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About\About.xml" />
+    <Content Include="About\Notes.txt" />
+    <Content Include="changelog.txt" />
+    <Content Include="compatibility.txt" />
+    <Content Include="Defs\ConceptDefs\Concepts_NotedOpportunistic.xml" />
+    <Content Include="Defs\Damage.xml" />
+    <Content Include="Defs\Designations.xml" />
+    <Content Include="Defs\Hediffs_Other.xml" />
+    <Content Include="Defs\Hediffs_PrivateParts.xml" />
+    <Content Include="Defs\Hediffs_STDs.xml" />
+    <Content Include="Defs\Incidents.xml" />
+    <Content Include="Defs\Interactions.xml" />
+    <Content Include="Defs\Items_PrivateParts.xml" />
+    <Content Include="Defs\Jobs.xml" />
+    <Content Include="Defs\Motes.xml" />
+    <Content Include="Defs\Needs.xml" />
+    <Content Include="Defs\PawnKinds.xml" />
+    <Content Include="Defs\PrivateParts.xml" />
+    <Content Include="Defs\Recipes_Prosthetics.xml" />
+    <Content Include="Defs\Recipes_Surgery.xml" />
+    <Content Include="Defs\RulePacks_EngravedNames.xml" />
+    <Content Include="Defs\SoundDef_XXX.xml" />
+    <Content Include="Defs\Stats.xml" />
+    <Content Include="Defs\STDs.xml" />
+    <Content Include="Defs\ThingsDef_XXX.xml" />
+    <Content Include="Defs\ThinkTrees.xml" />
+    <Content Include="Defs\Thoughts.xml" />
+    <Content Include="Defs\Traits.xml" />
+    <Content Include="Defs\_config.xml" />
+    <Content Include="Languages\English\DefInjected\ConceptDef\Concepts.xml" />
+    <Content Include="Languages\English\Keyed\RimJobWorld.xml" />
+    <Content Include="Patches\BodyPatches.xml" />
+    <Content Include="Sounds\Sex\blowjob.wav" />
+    <Content Include="Sounds\Sex\cum.wav" />
+    <Content Include="Sounds\Sex\kucyu04.wav" />
+    <Content Include="Textures\armbinder.png" />
+    <Content Include="Textures\big_penis.png" />
+    <Content Include="Textures\bionic_penis.png" />
+    <Content Include="Textures\bionic_vagina.png" />
+    <Content Include="Textures\chastity_belt.png" />
+    <Content Include="Textures\comfort_prisoner.png" />
+    <Content Include="Textures\comfort_prisoner_invisible.png" />
+    <Content Include="Textures\gag.png" />
+    <Content Include="Textures\holokey.png" />
+    <Content Include="Textures\hololock.png" />
+    <Content Include="Textures\huge_penis.png" />
+    <Content Include="Textures\hydraulic_vagina.png" />
+    <Content Include="Textures\micropenis.png" />
+    <Content Include="Textures\noheart.png" />
+    <Content Include="Textures\peg_dick.png" />
+    <Content Include="Textures\penis.png" />
+    <Content Include="Textures\placeholder_part.png" />
+    <Content Include="Textures\small_penis.png" />
+    <Content Include="Textures\vagina.png" />
+    <Content Include="todo.txt" />
+    <Content Include="version.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChildrenMod\Source\RimWorldChildren\RimWorld-Children\RimWorldChildren_A17.csproj">
+      <Project>{99ce67a2-d50a-4528-aefd-51cfde02c9c4}</Project>
+      <Name>RimWorldChildren_A17</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\bondage_gear.blend" />
+    <None Include="Textures\armbinder.xcf" />
+    <None Include="Textures\chastity_belt.xcf" />
+    <None Include="Textures\comfort_prisoner.xcf" />
+    <None Include="Textures\comfort_prisoner_invisible.xcf" />
+    <None Include="Textures\gag.xcf" />
+    <None Include="Textures\holokey.xcf" />
+    <None Include="Textures\hololock.xcf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /E /Y "C:\Projects\RimWorld\RJW" "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\"
+del "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\Assemblies\HugsLib.*"
+del "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\Assemblies\RimWorldChildren.*"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
