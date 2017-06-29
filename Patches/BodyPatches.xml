@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>//BodyDef[defName = "Human"]/corePart/parts</xpath>
+    <value>
+      <li>
+        <def>Genitals</def>
+        <coverage>0.02</coverage>
+        <height>Bottom</height>
+        <groups>
+          <li>Torso</li>
+        </groups>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>//BodyDef[defName != "Human"]/corePart/parts</xpath>
+    <value>
+      <li>
+        <def>Genitals</def>
+        <coverage>0.02</coverage>
+        <height>Bottom</height>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <NeedDef>
+    <DefName>Sex</DefName>
+    <needClass>rjw.Need_Sex</needClass>
+    <label>sex</label>
+    <description>sexual satisfaction</description>
+    <baseLevel>0.60</baseLevel>
+    <fallPerDay>0.40</fallPerDay>
+    <showOnNeedList>true</showOnNeedList>
+    <listPriority>49</listPriority>
+    <major>false</major>
+    <freezeWhileSleeping>false</freezeWhileSleeping>
+    <minIntelligence>Animal</minIntelligence>
+    <colonistAndPrisonersOnly>false</colonistAndPrisonersOnly>
+  </NeedDef>
+
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BodyPartDefs>
+
+  <BodyPartDef>
+    <defName>Genitals</defName>
+    <label>genitals</label>
+    <hitPoints>12</hitPoints>
+    <frostbiteVulnerability>0.1</frostbiteVulnerability>
+    <oldInjuryBaseChance>0.015</oldInjuryBaseChance>
+    <skinCovered>true</skinCovered>
+    <isSolid>false</isSolid>
+    <dontSuggestAmputation>false</dontSuggestAmputation>
+    <bleedingRateMultiplier>1.0</bleedingRateMultiplier>
+  </BodyPartDef>
+
+</BodyPartDefs>

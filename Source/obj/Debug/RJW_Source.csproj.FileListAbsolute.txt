@@ -1,0 +1,14 @@
+R:\UnsteamLibrary\RimWorld1393Win\Mods\RJW\Source\obj\Debug\RJW_Source.csprojResolveAssemblyReference.cache
+R:\UnsteamLibrary\RimWorld1393Win\Mods\RJW\Assemblies\RJW_Source.dll
+R:\UnsteamLibrary\RimWorld1393Win\Mods\RJW\Source\obj\Debug\RJW_Source.dll
+C:\Users\brian\Downloads\RimWorldMods\RJW_v11_a17\RJW\Source\obj\Debug\RJW_Source.csprojResolveAssemblyReference.cache
+C:\Users\brian\Downloads\RimWorldMods\RJW_v11_a17\RJW\Source\obj\Debug\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW\Source\obj\Debug\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW\Assemblies\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW\Source\obj\Debug\RJW_Source.csprojResolveAssemblyReference.cache
+C:\Users\brian\My Projects\RimWorld\RJW_A17\RJW\Assemblies\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW_A17\RJW\Source\obj\Debug\RJW_Source.csprojResolveAssemblyReference.cache
+C:\Users\brian\My Projects\RimWorld\RJW_A17\RJW\Source\obj\Debug\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW_A17\Assemblies\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW_A17\Source\obj\Debug\RJW_Source.dll
+C:\Users\brian\My Projects\RimWorld\RJW_A17\Source\obj\Debug\RJW_Source.csprojResolveAssemblyReference.cache

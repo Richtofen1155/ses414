@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>SexAbility</defName>
+    <label>sex ability</label>
+    <description>Measures whether or not a pawn is capable of sex, and how good they are at it</description>
+    <category>PawnSocial</category>
+    <defaultBaseValue>0.0</defaultBaseValue>
+    <minValue>0.0</minValue>
+    <toStringStyle>PercentTwo</toStringStyle>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>0.5</weight>
+      </li>
+    </capacityFactors>
+  </StatDef>
+
+</Defs>

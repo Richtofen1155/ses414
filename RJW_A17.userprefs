@@ -1,0 +1,25 @@
+﻿<Properties StartupItem="RJW.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="First.cs">
+    <Files>
+      <File FileName="../../../../../../0084508A84508456/Users/Auxiliary/Desktop/Rimworld Decompiled/Rimworld.cs" Line="10" Column="10" />
+      <File FileName="../../../../../../0084508A84508456/Users/Auxiliary/Desktop/Rimworld Decompiled/Verse.cs" Line="7" Column="7" />
+      <File FileName="First.cs" Line="5" Column="5" />
+      <File FileName="config.cs" Line="1" Column="1" />
+      <File FileName="patches_bondage_gear.cs" Line="7" Column="7" />
+      <File FileName="bondage_gear.cs" Line="24" Column="24" />
+      <File FileName="xxx.cs" Line="1" Column="1" />
+      <File FileName="ThoughtWorker_Bound.cs" Line="1" Column="1" />
+      <File FileName="Designator_ComfortPrisoner.cs" Line="1" Column="1" />
+      <File FileName="IncidentWorker_NymphJoins.cs" Line="1" Column="1" />
+      <File FileName="Recipe_ForceOffGear.cs" Line="4" Column="4" />
+      <File FileName="Recipe_Nullify.cs" Line="63" Column="63" />
+      <File FileName="Recipe_InstallPrivates_Male.cs" Line="1" Column="1" />
+      <File FileName="Recipe_InstallPrivates_Female.cs" Line="5" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>TestInc</defName>
+    <label>test inc</label>
+    <category>Misc</category>
+    <targetType>MapPlayerHome</targetType>
+    <workerClass>rjw.IncidentWorker_TestInc</workerClass>
+    <letterLabel>Something Happened</letterLabel>
+    <letterText>Something Happened</letterText>
+    <letterDef>BadNonUrgent</letterDef>
+    <baseChance>0.0</baseChance>
+    <minRefireDays>9999</minRefireDays>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>SexualizeThePawns</defName>
+    <label>sexualize the pawns</label>
+    <category>Misc</category>
+    <targetType>World</targetType>
+    <workerClass>rjw.IncidentWorker_Sexualize</workerClass>
+    <baseChance>0.0</baseChance>
+    <minRefireDays>9999</minRefireDays>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>NymphJoins</defName>
+    <label>nymph joins</label>
+    <category>AllyArrival</category>
+    <targetType>MapPlayerHome</targetType>
+    <workerClass>rjw.IncidentWorker_NymphJoins</workerClass>
+    <baseChance>0.67</baseChance>
+    <minRefireDays>6</minRefireDays>
+  </IncidentDef>
+
+</Defs>

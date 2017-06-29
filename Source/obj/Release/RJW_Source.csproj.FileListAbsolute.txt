@@ -1,0 +1,3 @@
+/Volumes/Games/Steam/SteamApps/common/RimWorld/RimWorldMac.app/Mods/RJW/Assemblies/RJW_Source.dll
+/Volumes/Games/Steam/SteamApps/common/RimWorld/RimWorldMac.app/Mods/RJW/Source/obj/Release/RJW_Source.csproj.CoreCompileInputs.cache
+/Volumes/Games/Steam/SteamApps/common/RimWorld/RimWorldMac.app/Mods/RJW/Source/obj/Release/RJW_Source.dll
