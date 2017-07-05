@@ -67,6 +67,20 @@
     <spawnThingOnRemoved>Vagina</spawnThingOnRemoved>
   </HediffDef>
 
+  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+    <defName>TightVagina</defName>
+    <label>tight vagina</label>
+    <stages>
+      <li>
+        <everVisible>true</everVisible>
+        <statOffsets>
+          <SexAbility>1.5</SexAbility>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>Vagina</spawnThingOnRemoved>
+  </HediffDef>  
+  
   <!-- Additional dick sizes -->
 
   <HediffDef ParentName="NaturalPrivatePartBase">
@@ -120,6 +134,59 @@
     </stages>
     <spawnThingOnRemoved>HugePenis</spawnThingOnRemoved>
   </HediffDef>
+  
+   <HediffDef ParentName="NaturalPrivatePartBase">
+    <defName>HorsePenis</defName>
+    <label>Horse penis</label>
+    <stages>
+      <li>
+        <statOffsets>
+          <SexAbility>1.6</SexAbility>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>HorsePenis</spawnThingOnRemoved>
+  </HediffDef>
+  
+   <HediffDef ParentName="NaturalPrivatePartBase">
+    <defName>CatPenis</defName>
+    <label>Cat penis</label>
+    <stages>
+      <li>
+        <statOffsets>
+          <SexAbility>1.4</SexAbility>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>CatPenis</spawnThingOnRemoved>
+  </HediffDef>
+
+   <HediffDef ParentName="NaturalPrivatePartBase">
+    <defName>DogPenis</defName>
+    <label>Dog penis</label>
+    <stages>
+      <li>
+        <statOffsets>
+          <SexAbility>1.5</SexAbility>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>DogPenis</spawnThingOnRemoved>
+  </HediffDef>
+  
+   <HediffDef ParentName="NaturalPrivatePartBase">
+    <defName>DragonPenis</defName>
+    <label>Dragon penis</label>
+    <stages>
+      <li>
+        <statOffsets>
+          <SexAbility>1.8</SexAbility>
+        </statOffsets>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>DragonPenis</spawnThingOnRemoved>
+  </HediffDef>   
+ 
 
   <!-- Simple prosthetic privates -->
 
