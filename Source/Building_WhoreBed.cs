@@ -13,11 +13,11 @@ namespace rjw
     {
         //public new Pawn owner;
 
-        private static readonly Color guestFieldColor = new Color(170/255f, 79/255f, 255/255f);
+        private static readonly Color whoreFieldColor = new Color(170/255f, 79/255f, 255/255f);
 
         private static readonly Color sheetColorForWhores = new Color(121/255f, 55/255f, 89/255f);
 
-        private static readonly List<IntVec3> guestField = new List<IntVec3>();
+        private static readonly List<IntVec3> whoreField = new List<IntVec3>();
 
         public Pawn CurOccupant
         {
@@ -76,12 +76,12 @@ namespace rjw
         //    {
         //        foreach (var current in room.Cells)
         //        {
-        //            guestField.Add(current);
+        //            whoreField.Add(current);
         //        }
-        //        var color = guestFieldColor;
+        //        var color = whoreFieldColor;
         //        color.a = Pulser.PulseBrightness(1f, 0.6f);
-        //        GenDraw.DrawFieldEdges(guestField, color);
-        //        guestField.Clear();
+        //        GenDraw.DrawFieldEdges(whoreField, color);
+        //        whoreField.Clear();
         //    }
         //}
 
@@ -131,16 +131,20 @@ namespace rjw
             {
                 yield return gizmo;
             }
-            yield return
-                        new Command_Toggle
-                        {
-                            defaultLabel = "CommandBedSetAsWhoreLabel".Translate(),
-                            defaultDesc = "CommandBedSetAsWhoreDesc".Translate(),
-                            icon = ContentFinder<Texture2D>.Get("UI/Commands/AsWhore"),
-                            isActive = () => true,
-                            toggleAction = () => Swap(this),
-                            hotKey = KeyBindingDefOf.Misc4
-                        };
+
+            if (xxx.config.whore_beds_enabled && def.building.bed_humanlike)
+            {
+                yield return 
+                    new Command_Toggle
+                    {
+                        defaultLabel = "CommandBedSetAsWhoreLabel".Translate(),
+                        defaultDesc = "CommandBedSetAsWhoreDesc".Translate(),
+                        icon = ContentFinder<Texture2D>.Get("UI/Commands/AsWhore"),
+                        isActive = () => true,
+                        toggleAction = () => Swap(this),
+                        hotKey = KeyBindingDefOf.Misc4
+                    };
+            }
         }
 
         public override void PostMake()
@@ -175,7 +179,7 @@ namespace rjw
             Building_Bed newBed;
             if (bed is Building_WhoreBed)
             {
-                newBed = (Building_Bed) MakeBed(bed, bed.def.defName.Split(new[] {"Guest"}, StringSplitOptions.RemoveEmptyEntries)[0]);
+                newBed = (Building_Bed) MakeBed(bed, bed.def.defName.Split(new[] {"Whore"}, StringSplitOptions.RemoveEmptyEntries)[0]);
             }
             else
             {
@@ -185,6 +189,7 @@ namespace rjw
             var spawnedBed = (Building_Bed)GenSpawn.Spawn(newBed, bed.Position, bed.Map, bed.Rotation);
             spawnedBed.HitPoints = bed.HitPoints;
             spawnedBed.ForPrisoners = bed.ForPrisoners;
+            
 
             var compQuality = spawnedBed.TryGetComp<CompQuality>();
 

@@ -18,6 +18,7 @@ namespace rjw {
 		public bool stds_enabled;
 		public bool bondage_gear_enabled;
 		public bool nymph_joiners_enabled;
+        public bool whore_beds_enabled;
 
 		// Display Toggles
 		public bool show_regular_dick_and_vag;

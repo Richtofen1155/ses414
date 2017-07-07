@@ -6,5 +6,7 @@ C:\Users\brian\My Projects\RimWorld\RJW\Assemblies\RimWorldChildren.pdb
 C:\Users\brian\My Projects\RimWorld\RJW\Assemblies\HugsLib.xml
 C:\Users\brian\My Projects\RimWorld\RJW\obj\Debug\RJW.dll
 C:\Projects\RimWorld\RJW\Assemblies\RJW.dll
-C:\Projects\RimWorld\RJW\obj\Debug\RJW.dll
+C:\Projects\RimWorld\RJW\Assemblies\0Harmony.dll
+C:\Projects\RimWorld\RJW\Assemblies\0Harmony.pdb
 C:\Projects\RimWorld\RJW\obj\Debug\RJW_A17.csprojResolveAssemblyReference.cache
+C:\Projects\RimWorld\RJW\obj\Debug\RJW.dll

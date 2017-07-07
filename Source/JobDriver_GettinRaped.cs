@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 using Verse;
@@ -51,7 +52,7 @@ namespace rjw {
 			after_rape.defaultDuration = 150;
 			after_rape.socialMode = RandomSocialMode.Off;
 			after_rape.AddFinishAction (delegate {
-				pawn.jobs.curDriver.layingDown = was_laying_down ? Verse.AI.LayingDownState.NotLaying : Verse.AI.LayingDownState.LayingInBed;
+                pawn.jobs.curDriver.layingDown = was_laying_down ? Verse.AI.LayingDownState.NotLaying : Verse.AI.LayingDownState.LayingInBed;
 			});
 			yield return after_rape;
 		}

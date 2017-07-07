@@ -107,13 +107,13 @@ namespace rjw {
 
 			yield return new Toil {
 				initAction = delegate {
-					xxx.aftersex (pawn, Prisoner, pawn);
+                    xxx.aftersex (pawn, Prisoner, pawn);
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (pawn);
 					if (! Prisoner.Dead) {
 						xxx.aftersex (Prisoner, pawn, pawn);
 						Prisoner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (Prisoner);
 					}
-				},
+                },
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};
 		}

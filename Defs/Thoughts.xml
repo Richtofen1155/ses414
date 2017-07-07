@@ -125,6 +125,7 @@
     <stages>
       <li>
         <label>raped</label>
+        <labelSocial>raped</labelSocial>
         <description>I was raped.</description>
         <baseMoodEffect>-18</baseMoodEffect>
       </li>
@@ -140,6 +141,7 @@
     <stages>
       <li>
         <label>raped (Masochist)</label>
+        <labelSocial>raped (Masochist)</labelSocial>
         <description>I was used and thrown around like a piece of meat. Something about it, though, just feels... right.</description>
         <baseMoodEffect>6</baseMoodEffect>
       </li>
@@ -155,6 +157,7 @@
     <stages>
       <li>
         <label>raped by animal</label>
+        <labelSocial>raped by animal</labelSocial>
         <description>An animal tried to breed with me...</description>
         <baseMoodEffect>-20</baseMoodEffect>
       </li>
@@ -170,6 +173,7 @@
     <stages>
       <li>
         <label>raped by animal (Masochist)</label>
+        <labelSocial>raped by animal (Masochist)</labelSocial>
         <description>An animal tried to breed with me. I hope it succeeded!</description>
         <baseMoodEffect>8</baseMoodEffect>
       </li>
@@ -200,6 +204,7 @@
     <stages>
       <li>
         <label>raped me (Masochist)</label>
+        <labelSocial>raped me (Masochist)</labelSocial>
         <description>I was raped by {0}.</description>
         <baseOpinionOffset>20</baseOpinionOffset>
       </li>
@@ -215,6 +220,7 @@
     <stages>
       <li>
         <label>allowed me to get raped</label>
+        <labelSocial>allowed me to get raped</labelSocial>
         <description>I was suffering while {0} just looked the other way.</description>
         <baseOpinionOffset>-30</baseOpinionOffset>
       </li>
@@ -230,6 +236,7 @@
     <stages>
       <li>
         <label>stole some lovin’</label>
+        <labelSocial>stole some lovin'</labelSocial>
         <description>I forced myself on some prisoner. The sex was pretty shit, but it's better than nothing.</description>
         <baseMoodEffect>8</baseMoodEffect>
       </li>
@@ -245,6 +252,7 @@
     <stages>
       <li>
         <label>stole some lovin’ (Bloodlust)</label>
+        <labelSocial>stole some lovin' (Bloodlust)</labelSocial>
         <description>I forced myself on some bitch prisoner. The screaming, the tears, the blood, it was all such a rush! I haven't felt this good since yesterday when I blew away those tribals.</description>
         <baseMoodEffect>15</baseMoodEffect>
       </li>

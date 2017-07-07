@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -92,6 +93,31 @@ namespace rjw {
 			}
 		}
 
+        static void inject_items ()
+        {
+            if (xxx.config.whore_beds_enabled)
+            {
+                var bedDefs = DefDatabase<ThingDef>.AllDefsListForReading.Where(def => def.thingClass == typeof(Building_Bed)).ToArray();
+
+                var fields = typeof(ThingDef).GetFields(BindingFlags.Public | BindingFlags.Instance);
+                foreach (var bedDef in bedDefs)
+                {
+                    var whoreBedDef = new ThingDef();
+                    foreach (var field in fields)
+                    {
+                        field.SetValue(whoreBedDef, field.GetValue(bedDef));
+                    }
+                    whoreBedDef.defName += "Whore";
+                    whoreBedDef.label = "WhoreBedFormat".Translate(whoreBedDef.label);
+                    whoreBedDef.thingClass = typeof(Building_WhoreBed);
+                    whoreBedDef.shortHash = 0;
+                    typeof(ShortHashGiver).GetMethod("GiveShortHash", BindingFlags.NonPublic | BindingFlags.Static).Invoke(null, new object[] { whoreBedDef, typeof(ThingDef) });
+                    DefDatabase<ThingDef>.Add(whoreBedDef);
+                }
+            }
+
+        }
+
 		static void show_bs (Backstory bs)
 		{
 			Log.Message ("Backstory \"" + bs.Title + "\" internals:");
@@ -115,18 +141,19 @@ namespace rjw {
 
 		static First ()
 		{
-			inject_sexualizer ();
-			//inject_genitals ();
-			inject_recipes ();
+			inject_sexualizer();
+			//inject_genitals();
+			inject_recipes();
+            inject_items();
 
-			xxx.init (); // Must only be called after injections are complete
-			nymph_backstories.init ();
-			std.init ();
-			bondage_gear_tradeability.init ();
+			xxx.init(); // Must only be called after injections are complete
+			nymph_backstories.init();
+			std.init();
+			bondage_gear_tradeability.init();
 
-			var har = HarmonyInstance.Create ("rjw");
-			har.PatchAll (Assembly.GetExecutingAssembly ());
-			PATCH_Pawn_ApparelTracker_TryDrop.apply (har);
+			var har = HarmonyInstance.Create("rjw");
+			har.PatchAll(Assembly.GetExecutingAssembly ());
+			PATCH_Pawn_ApparelTracker_TryDrop.apply(har);
 		}
 	}
 }

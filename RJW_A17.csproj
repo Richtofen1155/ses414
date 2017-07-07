@@ -67,10 +67,6 @@
       <HintPath>..\..\..\..\..\..\Games\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>..\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Source\Building_Bed_Patch.cs" />
@@ -143,7 +139,9 @@
     <Content Include="Defs\Hediffs_PrivateParts.xml" />
     <Content Include="Defs\Hediffs_STDs.xml" />
     <Content Include="Defs\Incidents.xml" />
-    <Content Include="Defs\Interactions.xml" />
+    <Content Include="Defs\Interactions.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\Items_PrivateParts.xml" />
     <Content Include="Defs\Jobs.xml" />
     <Content Include="Defs\Motes.xml" />
@@ -161,7 +159,9 @@
     <Content Include="Defs\Thoughts.xml" />
     <Content Include="Defs\Traits.xml" />
     <Content Include="Defs\_config.xml" />
-    <Content Include="Languages\English\DefInjected\ConceptDef\Concepts.xml" />
+    <Content Include="Languages\English\DefInjected\ConceptDef\Concepts.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Languages\English\Keyed\RimJobWorld.xml" />
     <Content Include="Patches\BodyPatches.xml" />
     <Content Include="Sounds\Sex\blowjob.wav" />
@@ -190,13 +190,6 @@
     <Content Include="version.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChildrenMod\Source\RimWorldChildren\RimWorld-Children\RimWorldChildren_A17.csproj">
-      <Project>{99ce67a2-d50a-4528-aefd-51cfde02c9c4}</Project>
-      <Name>RimWorldChildren_A17</Name>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Models\bondage_gear.blend" />
     <None Include="Textures\armbinder.xcf" />
     <None Include="Textures\chastity_belt.xcf" />
@@ -206,9 +199,24 @@
     <None Include="Textures\holokey.xcf" />
     <None Include="Textures\hololock.xcf" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Harmony\Harmony\Harmony.csproj">
+      <Project>{69aee16a-b6e7-4642-8081-3928b32455df}</Project>
+      <Name>Harmony</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChildrenMod_v02D\ChildrenMod\Source\RimWorldChildren\RimWorld-Children\RimWorldChildren_A17.csproj">
+      <Project>{99ce67a2-d50a-4528-aefd-51cfde02c9c4}</Project>
+      <Name>RimWorldChildren_A17</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /E /Y "C:\Projects\RimWorld\RJW" "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\"
-</PostBuildEvent>
+del "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\Assemblies\*.pdb"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

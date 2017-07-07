@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <InteractionDefs>
-  
-  <!--
+
+   <!--
   <InteractionDef>
     <defName>Raped</defName>
     <label>raped</label>
     <workerClass>rjw.InteractionWorker_Raped</workerClass>
     <symbol>Things/Motes/SpeechSymbols/Scold</symbol>
     <socialFightBaseChance>0.0</socialFightBaseChance>
-    <recipientThought>GotToldOff</recipientThought>
+    <recipientThought>StoleSomeLovin</recipientThought>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Scolded [other_nameShortIndef].</li>
+        <li>logentry->Raped [other_nameShortIndef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>logentry->Was scolded by [other_nameShortIndef].</li>
+        <li>logentry->Was raped by [other_nameShortIndef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
-  
+
   <InteractionDef>
     <defName>HugFriend</defName>
     <label>hug</label>

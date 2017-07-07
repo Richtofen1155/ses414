@@ -4,6 +4,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
+
 namespace rjw
 {
     public class Building_Bed_Patch
@@ -15,6 +16,8 @@ namespace rjw
             [HarmonyPostfix]
             public static void Postfix(Building_Bed __instance)
             {
+                if (!xxx.config.whore_beds_enabled) return;
+
                 if (!__instance.ForPrisoners) return;
 
                 if (__instance is Building_WhoreBed)
@@ -39,7 +42,7 @@ namespace rjw
                 {
                     yield return gizmo;
                 }
-                if (!__instance.ForPrisoners && !__instance.Medical)
+                if (xxx.config.whore_beds_enabled && !__instance.ForPrisoners && !__instance.Medical && __instance.def.building.bed_humanlike)
                 {
                     yield return
                         new Command_Toggle
