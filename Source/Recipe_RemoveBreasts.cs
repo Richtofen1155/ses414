@@ -7,7 +7,7 @@ using Verse;
 using RimWorld;
 
 namespace rjw {
-	public class Recipe_Nullify : rjw_CORE_EXPOSED.Recipe_RemoveBodyPart {
+	public class Recipe_RemoveBreasts : rjw_CORE_EXPOSED.Recipe_RemoveBodyPart {
 
 		// Quick and dirty method to guess whether the player is harvesting the genitals or amputating them
 		// due to infection. The core code can't do this properly because it considers the private part
@@ -44,7 +44,7 @@ namespace rjw {
 		{
 			foreach (var part in p.health.hediffSet.GetNotMissingParts ())
 				if (r.appliedOnFixedBodyParts.Contains (part.def) &&
-					((part != xxx.genitals) || (! Genital_Helper.genitals_blocked (p))))
+					((part != xxx.breasts) || (! Genital_Helper.breasts_blocked (p))))
 					yield return part;
 		}
 

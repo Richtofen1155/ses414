@@ -23,6 +23,8 @@ namespace rjw {
 				giv.hediff = HediffDef.Named ("DummyPrivates");
 				giv.partsToAffect = new List<BodyPartDef> ();
 				giv.partsToAffect.Add (DefDatabase<BodyPartDef>.GetNamed ("Genitals"));
+                //giv.partsToAffect.Add(DefDatabase<BodyPartDef>.GetNamed("Breasts"));
+                //giv.partsToAffect.Add(DefDatabase<BodyPartDef>.GetNamed("Anus"));
 				giv.canAffectAnyLivePart = false;
 				giv.ageFractionChanceCurve = new SimpleCurve ();
 				giv.ageFractionChanceCurve.Add (0.00f, 1.0f);
@@ -55,14 +57,19 @@ namespace rjw {
 		// Generate a BodyPartRecord for the genitals part and inject it into the Human BodyDef. By adding the
 		// genitals at the end of the list of body parts we can hopefully avoid breaking existing saves with
 		// mods that also modify the human BodyDef.
+        // I don't think this is used anymore
 		public static void inject_genitals (BodyDef target = null)
 		{
+            Log.Message("[RJW] First::inject_genitals() called");
 			if (target == null) {
 				target = BodyDefOf.Human;
 			}
 
-			Genital_Helper.inject_genitals (target);
+            Genital_Helper.inject_genitals(target);
+            Genital_Helper.inject_breasts(target);
+            Genital_Helper.inject_anus(target);
 		}
+
 
 		static void inject_recipes ()
 		{
@@ -77,15 +84,20 @@ namespace rjw {
 			(bas_ben ?? cra_spo).AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakePegDick"));
 
 			var sim_ben = DefDatabase<ThingDef>.GetNamed ("TableSimpleProsthetic", false);
-			(sim_ben ?? mac_ben).AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakeHydraulicVagina"));
+            (sim_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeHydraulicVagina"));
+            (sim_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeHydraulicBreasts"));
+            (sim_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeHydraulicAnus"));
 
-			var bio_ben = DefDatabase<ThingDef>.GetNamed ("TableBionics", false);
+            var bio_ben = DefDatabase<ThingDef>.GetNamed ("TableBionics", false);
 			(bio_ben ?? mac_ben).AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakeBionicVagina"));
-			(bio_ben ?? mac_ben).AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakeBionicPenis"));
+            (bio_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeBionicPenis"));
+            (bio_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeBionicAnus"));
+            (bio_ben ?? mac_ben).AllRecipes.Add(DefDatabase<RecipeDef>.GetNamed("MakeBionicBreasts"));
 
 
-			// Inject the bondage gear recipes into their appropriate benches
-			if (xxx.config.bondage_gear_enabled) {
+
+            // Inject the bondage gear recipes into their appropriate benches
+            if (xxx.config.bondage_gear_enabled) {
 				mac_ben.AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakeHololock"));
 				tai_ben.AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakeArmbinder"));
 				tai_ben.AllRecipes.Add (DefDatabase<RecipeDef>.GetNamed ("MakeGag"));

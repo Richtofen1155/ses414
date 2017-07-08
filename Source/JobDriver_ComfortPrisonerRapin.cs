@@ -72,11 +72,17 @@ namespace rjw {
             this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner)); // Fail if someone else reserves the prisoner before the pawn arrives
             //this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, -1, null, true)); // ok if someone else reserves the prisoner before the pawn arrives
             yield return Toils_Goto.GotoThing (iprisoner, PathEndMode.OnCell);
-            
 
-			var rape = new Toil ();
+
+            var rape = new Toil ();
 			rape.initAction = delegate {
 				pawn.Reserve (Prisoner, comfort_prisoners.max_rapists_per_prisoner);
+
+                // Trying to add some interactions and social logs
+                InteractionDef intDef = DefDatabase<InteractionDef>.GetNamed("AnalRaped");
+                if (!xxx.is_animal(pawn) && !xxx.is_animal(Prisoner))
+                    pawn.interactions.TryInteractWith(Prisoner, intDef);
+
 				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
 				if (dri == null) {
 					var gettin_raped = new Job (xxx.gettin_raped);

@@ -1,44 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <InteractionDefs>
 
-   <!--
+
   <InteractionDef>
-    <defName>Raped</defName>
-    <label>raped</label>
-    <workerClass>rjw.InteractionWorker_Raped</workerClass>
-    <symbol>Things/Motes/SpeechSymbols/Scold</symbol>
+    <defName>AnalRaped</defName>
+    <label>anally raped</label>
+    <workerClass>rjw.InteractionWorker_AnalRapeAttempt</workerClass>
+    <symbol>noheart</symbol>
     <socialFightBaseChance>0.0</socialFightBaseChance>
     <recipientThought>StoleSomeLovin</recipientThought>
+    <initiatorXpGainSkill>Melee</initiatorXpGainSkill>
+    <initiatorXpGainAmount>50</initiatorXpGainAmount>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Raped [other_nameShortIndef].</li>
+        <li>logentry->Anally raped [other_nameShortIndef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>logentry->Was raped by [other_nameShortIndef].</li>
+        <li>logentry->Was anally raped by [other_nameShortIndef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
 
-  <InteractionDef>
-    <defName>HugFriend</defName>
-    <label>hug</label>
-    <workerClass>RimWorldChildren.InteractionWorker_HugFriend</workerClass>
-    <symbol>Things/Mote/SpeechSymbols/KindWords</symbol>
-    <socialFightBaseChance>0.0</socialFightBaseChance>
-    <recipientThought>GotHugged</recipientThought>
-    <logRulesInitiator>
-      <rulesStrings>
-        <li>logentry->Hugged [other_nameShortIndef].</li>
-      </rulesStrings>
-    </logRulesInitiator>
-    <logRulesRecipient>
-      <rulesStrings>
-        <li>logentry->Was hugged by [other_nameShortIndef].</li>
-      </rulesStrings>
-    </logRulesRecipient>
-  </InteractionDef>
--->
+ 
   
 </InteractionDefs>

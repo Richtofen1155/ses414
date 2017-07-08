@@ -73,7 +73,9 @@
     <Compile Include="Source\Building_WhoreBed.cs" />
     <Compile Include="Source\config.cs" />
     <Compile Include="Source\Genital_Helper.cs" />
+    <Compile Include="Source\Hediff_InitPrivates.cs" />
     <Compile Include="Source\HugsLibInj.cs" />
+    <Compile Include="Source\InteractionWorker_AnalRapeAttempt.cs" />
     <Compile Include="Source\JobDriver_ComfortPrisonerRapin.cs" />
     <Compile Include="Source\JobDriver_GettinRaped.cs" />
     <Compile Include="Source\JobGiver_ComfortPrisonerRape.cs" />
@@ -89,10 +91,15 @@
     <Compile Include="Source\chastity_belt.cs" />
     <Compile Include="Source\patches_bondage_gear.cs" />
     <Compile Include="Source\patches_lovin.cs" />
+    <Compile Include="Source\PawnCapacityWorker_Fertility.cs" />
+    <Compile Include="Source\Recipe_InstallAnus.cs" />
+    <Compile Include="Source\Recipe_InstallBreasts_Female.cs" />
     <Compile Include="Source\Recipe_InstallPrivates_Female.cs" />
     <Compile Include="Source\Recipe_InstallPrivates_Male.cs" />
     <Compile Include="Source\Recipe_Nullify.cs" />
     <Compile Include="Source\bondage_gear.cs" />
+    <Compile Include="Source\Recipe_RemoveAnus.cs" />
+    <Compile Include="Source\Recipe_RemoveBreasts.cs" />
     <Compile Include="Source\std.cs" />
     <Compile Include="Source\ThinkNode_ChancePerHour_RapeCP.cs" />
     <Compile Include="Source\ThinkNode_ConditionalCanRapeCP.cs" />
@@ -102,7 +109,6 @@
     <Compile Include="Source\ThoughtWorker_WastingAway.cs" />
     <Compile Include="Source\xxx.cs" />
     <Compile Include="Source\First.cs" />
-    <Compile Include="Source\Hediff_InitPrivates.cs" />
     <Compile Include="Source\Hediff_InvisibleImplant.cs" />
     <Compile Include="Source\IncidentWorker_TestInc.cs" />
     <Compile Include="Source\JobDriver_Fappin.cs" />
@@ -136,7 +142,9 @@
     <Content Include="Defs\Damage.xml" />
     <Content Include="Defs\Designations.xml" />
     <Content Include="Defs\Hediffs_Other.xml" />
-    <Content Include="Defs\Hediffs_PrivateParts.xml" />
+    <Content Include="Defs\Hediffs_PrivateParts.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Defs\Hediffs_STDs.xml" />
     <Content Include="Defs\Incidents.xml" />
     <Content Include="Defs\Interactions.xml">
@@ -146,6 +154,7 @@
     <Content Include="Defs\Jobs.xml" />
     <Content Include="Defs\Motes.xml" />
     <Content Include="Defs\Needs.xml" />
+    <Content Include="Defs\PawnCapacity.xml" />
     <Content Include="Defs\PawnKinds.xml" />
     <Content Include="Defs\PrivateParts.xml" />
     <Content Include="Defs\Recipes_Prosthetics.xml" />
@@ -163,7 +172,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Languages\English\Keyed\RimJobWorld.xml" />
-    <Content Include="Patches\BodyPatches.xml" />
+    <Content Include="Patches\BodyPatches.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Sounds\Sex\blowjob.wav" />
     <Content Include="Sounds\Sex\cum.wav" />
     <Content Include="Sounds\Sex\kucyu04.wav" />

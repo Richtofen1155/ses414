@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- Need to rework the options into functional groups
+    Beastiality
+    Diseases
+    Nymphs
+    Pregnancy
+    Bondage
+    Visual
+    
+  -->
+  
   <rjw.config>
     <defName>the_one</defName>
     <animals_enabled>true</animals_enabled>
     <comfort_prisoners_enabled>true</comfort_prisoners_enabled>
-    <!-- colonists_can_be_comfort_prisoners doesn't actually do anything yet -->
+    <!-- the colonists_can_be_comfort_prisoners option doesn't actually do anything yet, colonists are always enabled -->
     <colonists_can_be_comfort_prisoners>true</colonists_can_be_comfort_prisoners>
     <cum_enabled>true</cum_enabled>
     <rape_me_sticky_enabled>false</rape_me_sticky_enabled>
@@ -16,7 +26,7 @@
     <nymph_joiners_enabled>true</nymph_joiners_enabled>
     <whore_beds_enabled>false</whore_beds_enabled>
 
-    <show_regular_dick_and_vag>true</show_regular_dick_and_vag>
+    <show_regular_dick_and_vag>false</show_regular_dick_and_vag>
 
     <!-- Logs the process of handing out STDs after sex for debug purposes (or for anyone who's curious) -->
     <std_show_roll_to_catch>false</std_show_roll_to_catch>

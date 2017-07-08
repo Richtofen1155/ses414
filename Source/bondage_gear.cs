@@ -80,6 +80,8 @@ namespace rjw {
 		public bool gives_bound_moodlet = false;
 		public bool gives_gagged_moodlet = false;
 		public bool blocks_genitals = false;
+        public bool blocks_anus = false;
+        public bool blocks_breasts = false;
 		private bondage_gear_soul soul_ins = null;
 		
 		public bondage_gear_soul soul {

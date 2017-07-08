@@ -3,7 +3,7 @@
 
   <TraitDef>
     <defName>Nymphomaniac</defName>
-    <commonality>0.0</commonality>
+    <commonality>0.1</commonality>
     <degreeDatas>
       <li>
         <label>nymphomaniac</label>
@@ -21,7 +21,7 @@
 
   <TraitDef>
     <defName>Rapist</defName>
-    <commonality>0.0</commonality>
+    <commonality>0.1</commonality>
     <degreeDatas>
       <li>
         <label>Rapist</label>

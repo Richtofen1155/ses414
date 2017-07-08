@@ -43,8 +43,8 @@
     </statBases>
   </ThingDef>
 
-  <!-- Natural privates -->
 
+  <!-- Natural Penises -->
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>Penis</defName>
     <label>penis</label>
@@ -60,39 +60,13 @@
   </ThingDef>
 
   <ThingDef ParentName="BodyPartNaturalBase">
-    <defName>Vagina</defName>
-    <label>vagina</label>
-    <description>A severed vagina, whatever that means.</description>
-    <graphicData>
-      <texPath>vagina</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <statBases>
-      <MarketValue>250</MarketValue>
-      <Mass>1</Mass>
-    </statBases>
-  </ThingDef>
-  
-  <ThingDef ParentName="BodyPartNaturalBase">
-    <defName>TightVagina</defName>
-    <label>tight vagina</label>
-    <description>A severed tight vagina, whatever that means.</description>
-    <graphicData>
-      <texPath>vagina</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <statBases>
-      <MarketValue>250</MarketValue>
-      <Mass>1</Mass>
-    </statBases>
-  </ThingDef>  
-
-  <ThingDef ParentName="BodyPartNaturalBase">
     <defName>Micropenis</defName>
     <label>micropenis</label>
-    <description>A severed pinky.
+    <description>
+      A severed pinky.
 
-    Uh, no wait...</description>
+      Uh, no wait...
+    </description>
     <graphicData>
       <texPath>micropenis</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -144,7 +118,7 @@
       <Mass>2.00</Mass>
     </statBases>
   </ThingDef>
-  
+
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>HorsePenis</defName>
     <label>horse penis</label>
@@ -158,7 +132,7 @@
       <Mass>1</Mass>
     </statBases>
   </ThingDef>
-  
+
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>CatPenis</defName>
     <label>cat penis</label>
@@ -172,7 +146,7 @@
       <Mass>1</Mass>
     </statBases>
   </ThingDef>
-  
+
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>DogPenis</defName>
     <label>cat penis</label>
@@ -186,7 +160,7 @@
       <Mass>1</Mass>
     </statBases>
   </ThingDef>
-  
+
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>DragonPenis</defName>
     <label>dragon penis</label>
@@ -199,24 +173,153 @@
       <MarketValue>250</MarketValue>
       <Mass>1</Mass>
     </statBases>
-  </ThingDef>    
-  
-  <!-- Simple prosthetic privates -->
+  </ThingDef>
 
-  <ThingDef ParentName="BodyPartArtificialBase">
-    <defName>HydraulicVagina</defName>
-    <label>hydraulic vagina</label>
-    <description>A low-tech prosthetic vagina. Its cold metal grip is uncomfortable but it has great suction power.</description>
+  <!-- Natural Vaginas -->
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>Vagina</defName>
+    <label>vagina</label>
+    <description>A severed vagina, whatever that means.</description>
     <graphicData>
-      <texPath>hydraulic_vagina</texPath>
+      <texPath>vagina</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>100</MarketValue>
-      <Mass>3.00</Mass>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>TightVagina</defName>
+    <label>tight vagina</label>
+    <description>A severed tight vagina, whatever that means.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
     </statBases>
   </ThingDef>
 
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>LooseVagina</defName>
+    <label>loose vagina</label>
+    <description>A severed loose vagina, whatever that means.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <!-- Natural Breasts -->
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>Breasts</defName>
+    <label>breasts</label>
+    <description>A pair of severed breasts.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>SmallBreasts</defName>
+    <label>small breasts</label>
+    <description>A pair of severed small breasts.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>LargeBreasts</defName>
+    <label>large breasts</label>
+    <description>A pair of severed large breasts.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>HugeBreasts</defName>
+    <label>huge breasts</label>
+    <description>A pair of severed huge breasts.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <!-- Natural Anuses -->
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>Anus</defName>
+    <label>anus</label>
+    <description>A severed anus... yeah I don't know what that is either.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>TightAnus</defName>
+    <label>tight anus</label>
+    <description>A severed tight anus... yeah I don't know what that is either.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="BodyPartNaturalBase">
+    <defName>LooseAnus</defName>
+    <label>loose anus</label>
+    <description>Hey, look a donut.  Ewww, it's an anus.</description>
+    <graphicData>
+      <texPath>vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+  </ThingDef>
+
+
+  <!-- Simple prosthetic penises -->
   <ThingDef ParentName="BodyPartArtificialBase">
     <defName>PegDick</defName>
     <label>peg dick</label>
@@ -231,8 +334,72 @@
     </statBases>
   </ThingDef>
 
-  <!-- Bionic privates -->
+  <!-- Simple prosthetic vaginas -->
+  <ThingDef ParentName="BodyPartArtificialBase">
+    <defName>HydraulicVagina</defName>
+    <label>hydraulic vagina</label>
+    <description>A low-tech prosthetic vagina. Its cold metal grip is uncomfortable but it has great suction power.</description>
+    <graphicData>
+      <texPath>hydraulic_vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>3.00</Mass>
+    </statBases>
+  </ThingDef>
 
+  <!-- Simple prosthetic breasts -->
+  <ThingDef ParentName="BodyPartArtificialBase">
+    <defName>HydraulicBreasts</defName>
+    <label>hydraulic breasts</label>
+    <description>Low-tech prosthetic breasts.  Conical metal with increased pumping action, spray your friends.</description>
+    <graphicData>
+      <texPath>hydraulic_vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>3.00</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <!-- Simple prosthetic anuses -->
+  <ThingDef ParentName="BodyPartArtificialBase">
+    <defName>HydraulicAnus</defName>
+    <label>hydraulic anus</label>
+    <description>A low-tech prosthetic anus. Its cold metal grip is uncomfortable but it has great suction power.</description>
+    <graphicData>
+      <texPath>hydraulic_vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>100</MarketValue>
+      <Mass>3.00</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <!-- Bionic penises -->
+  <ThingDef ParentName="BodyPartArtificialBase">
+    <defName>BionicPenis</defName>
+    <label>bionic penis</label>
+    <description>
+      A high-tech prosthetic penis. Features include:
+      - ABSOLUTELY MASSIVE, this prosthetic is larger than any known natural penis, and is in fact the largest penile prosthetic permissible under federal law.
+      - Over 50 different vibration modes, including 10 of the most stimulating waveforms known to science
+      - State-of-the-art neural interface activates neural pathways you didn't even know you had to make you feel things you never even imagined
+    </description>
+    <graphicData>
+      <texPath>bionic_penis</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>900</MarketValue>
+      <Mass>1.00</Mass>
+    </statBases>
+  </ThingDef>
+  
+  <!-- Bionic vaginas -->
   <ThingDef ParentName="BodyPartArtificialBase">
     <defName>BionicVagina</defName>
     <label>bionic vagina</label>
@@ -251,21 +418,41 @@
     </statBases>
   </ThingDef>
 
+  <!-- Bionic breasts -->
   <ThingDef ParentName="BodyPartArtificialBase">
-    <defName>BionicPenis</defName>
-    <label>bionic penis</label>
-    <description>A high-tech prosthetic penis. Features include:
-    - ABSOLUTELY MASSIVE, this prosthetic is larger than any known natural penis, and is in fact the largest penile prosthetic permissible under federal law.
-    - Over 50 different vibration modes, including 10 of the most stimulating waveforms known to science
-    - State-of-the-art neural interface activates neural pathways you didn't even know you had to make you feel things you never even imagined</description>
+    <defName>BionicBreasts</defName>
+    <label>bionic breasts</label>
+    <description>
+      High-tech prosthetic breasts. Features include:
+      - Resizes to fit any desired size
+    </description>
     <graphicData>
-      <texPath>bionic_penis</texPath>
+      <texPath>bionic_vagina</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>900</MarketValue>
-      <Mass>1.00</Mass>
+      <MarketValue>1300</MarketValue>
+      <Mass>1.50</Mass>
     </statBases>
   </ThingDef>
 
+  <!-- Bionic anuses -->
+  <ThingDef ParentName="BodyPartArtificialBase">
+    <defName>BionicAnus</defName>
+    <label>bionic anus</label>
+    <description>
+      A high-tech prosthetic anus. Features include:
+      - Resizes to fit any penis
+      - Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
+    </description>
+    <graphicData>
+      <texPath>bionic_vagina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1300</MarketValue>
+      <Mass>1.50</Mass>
+    </statBases>
+  </ThingDef>
+  
 </ThingDefs>

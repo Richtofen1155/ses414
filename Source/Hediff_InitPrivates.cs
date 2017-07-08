@@ -14,9 +14,9 @@ namespace rjw {
 
 		public override void PostAdd (DamageInfo? dinfo)
 		{
-			if (! xxx.is_sexualized (pawn)) {
-				xxx.sexualize (pawn);
-				std.generate_on (pawn);
+			if (! Genital_Helper.is_sexualized(pawn)) {
+                Genital_Helper.sexualize(pawn);
+                std.generate_on(pawn);
 			}
 
 			// Remove the dummy hediff

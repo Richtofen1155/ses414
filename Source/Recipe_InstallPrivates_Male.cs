@@ -11,7 +11,7 @@ namespace rjw {
 
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn (Pawn p, RecipeDef r)
 		{
-			var gen_blo = xxx.genitals_blocked (p);
+			var gen_blo = Genital_Helper.genitals_blocked (p);
 			if (p.gender == Gender.Male) {
 				foreach (var part in base.GetPartsToApplyOn (p, r))
 					if ((! gen_blo) || (part != xxx.genitals))

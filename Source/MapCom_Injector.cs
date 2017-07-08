@@ -27,8 +27,8 @@ namespace rjw {
 			if (! triggered_after_load) {
 				triggered_after_load = true;
 				
-				if (xxx.pawns_require_sexualization ())
-					xxx.sexualize_everyone ();
+				if (Genital_Helper.pawns_require_sexualization ())
+					Genital_Helper.sexualize_everyone ();
 			}
 			
 			var currently_visible = Find.VisibleMap == map;

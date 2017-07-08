@@ -10,7 +10,7 @@ namespace rjw {
 
 		public override bool TryExecute (IncidentParms parms)
 		{
-			xxx.sexualize_everyone ();
+			Genital_Helper.sexualize_everyone ();
 			Find.LetterStack.ReceiveLetter ("Sexualization Complete", "All pawns have been sexualized.", LetterDefOf.Good, null);
 			return true;
 		}

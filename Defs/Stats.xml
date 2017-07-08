@@ -17,4 +17,34 @@
     </capacityFactors>
   </StatDef>
 
+  <StatDef>
+    <defName>Vulnerability</defName>
+    <label>vulnerability</label>
+    <description>Measures how likely a pawn is to be taken advantage of sexually</description>
+    <category>PawnSocial</category>
+    <defaultBaseValue>0.0</defaultBaseValue>
+    <minValue>0.0</minValue>
+    <toStringStyle>PercentTwo</toStringStyle>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Melee</skill>
+        <baseFactor>0.25</baseFactor>
+        <bonusFactor>0.075</bonusFactor>
+      </li>
+    </skillNeedFactors>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>0.5</weight>
+      </li>
+      <li>
+        <capacity>Moving</capacity>
+        <weight>0.5</weight>
+      </li>
+      <li>
+        <capacity>Consciousness</capacity>
+        <weight>0.5</weight>
+      </li>
+    </capacityFactors>
+  </StatDef>
 </Defs>
