@@ -78,10 +78,10 @@ namespace rjw {
 			rape.initAction = delegate {
 				pawn.Reserve (Prisoner, comfort_prisoners.max_rapists_per_prisoner);
 
-                // Trying to add some interactions and social logs
-                InteractionDef intDef = DefDatabase<InteractionDef>.GetNamed("AnalRaped");
-                if (!xxx.is_animal(pawn) && !xxx.is_animal(Prisoner))
-                    pawn.interactions.TryInteractWith(Prisoner, intDef);
+                //// Trying to add some interactions and social logs
+                //InteractionDef intDef = DefDatabase<InteractionDef>.GetNamed("AnalRaped");
+                //if (!xxx.is_animal(pawn) && !xxx.is_animal(Prisoner))
+                //    pawn.interactions.TryInteractWith(Prisoner, intDef);
 
 				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
 				if (dri == null) {

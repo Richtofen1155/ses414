@@ -19,6 +19,23 @@
     </recipeUsers>
   </RecipeDef>
   
+  <RecipeDef Abstract="True" Name="BreastSurgery" ParentName="SurgeryFlesh">
+    <appliedOnFixedBodyParts>
+      <li>Breasts</li>
+    </appliedOnFixedBodyParts>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef Abstract="True" Name="AnalSurgery" ParentName="SurgeryFlesh">
+    <appliedOnFixedBodyParts>
+      <li>Anus</li>
+    </appliedOnFixedBodyParts>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
 
   <!-- Attach natural privates -->
 
@@ -454,7 +471,44 @@
     <addsHediff>DragonPenis</addsHediff>
   </RecipeDef>
 
-  <RecipeDef ParentName="SexReassignment">
+  <!-- Breasts -->
+  <RecipeDef ParentName="BreastSurgery">
+    <defName>AttachSmallBreasts</defName>
+    <label>attach small breasts</label>
+    <description>Attaches a pair of small breasts.</description>
+    <workerClass>rjw.Recipe_InstallBreasts_Female</workerClass>
+    <jobString>Attaching a pair of small breasts.</jobString>
+    <workAmount>1200</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SmallBreasts</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>SmallBreasts</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>SmallBreasts</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="BreastSurgery">
     <defName>AttachBreasts</defName>
     <label>attach normal breasts</label>
     <description>Attaches a pair of breasts.</description>
@@ -489,9 +543,83 @@
     </fixedIngredientFilter>
     <addsHediff>Breasts</addsHediff>
   </RecipeDef>
+  
+  <RecipeDef ParentName="BreastSurgery">
+    <defName>AttachLargeBreasts</defName>
+    <label>attach large breasts</label>
+    <description>Attaches a pair of large breasts.</description>
+    <workerClass>rjw.Recipe_InstallBreasts_Female</workerClass>
+    <jobString>Attaching a pair of large breasts.</jobString>
+    <workAmount>1200</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>LargeBreasts</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>LargeBreasts</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>LargeBreasts</addsHediff>
+  </RecipeDef>
+  
+  
+  <RecipeDef ParentName="BreastSurgery">
+    <defName>AttachHugeBreasts</defName>
+    <label>attach huge breasts</label>
+    <description>Attaches a pair of huge breasts.</description>
+    <workerClass>rjw.Recipe_InstallBreasts_Female</workerClass>
+    <jobString>Attaching a pair of huge breasts.</jobString>
+    <workAmount>1200</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>HugeBreasts</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>HugeBreasts</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>HugeBreasts</addsHediff>
+  </RecipeDef>
+  
+  
 
-
-  <RecipeDef ParentName="SexReassignment">
+  <RecipeDef ParentName="AnalSurgery">
     <defName>AttachAnus</defName>
     <label>attach normal anus</label>
     <description>Attaches an anus.</description>
@@ -526,6 +654,79 @@
     </fixedIngredientFilter>
     <addsHediff>Anus</addsHediff>
   </RecipeDef>
+  
+  <RecipeDef ParentName="AnalSurgery">
+    <defName>AttachLooseAnus</defName>
+    <label>attach loose anus</label>
+    <description>Attaches a loose anus.</description>
+    <workerClass>rjw.Recipe_InstallAnus</workerClass>
+    <jobString>Attaching a loose anus.</jobString>
+    <workAmount>1200</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>LooseAnus</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>LooseAnus</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>LooseAnus</addsHediff>
+  </RecipeDef>
+      
+    <RecipeDef ParentName="AnalSurgery">
+    <defName>AttachTightAnus</defName>
+    <label>attach tight anus</label>
+    <description>Attaches a tight anus.</description>
+    <workerClass>rjw.Recipe_InstallAnus</workerClass>
+    <jobString>Attaching a tight anus.</jobString>
+    <workAmount>1200</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>TightAnus</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+        <li>TightAnus</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>TightAnus</addsHediff>
+  </RecipeDef>
+  
   
   <!-- Attach simple prosthetic privates -->
 
@@ -565,6 +766,78 @@
     <addsHediff>HydraulicVagina</addsHediff>
   </RecipeDef>
 
+    <RecipeDef ParentName="BreastSurgery">
+    <defName>InstallHydraulicBreasts</defName>
+    <label>install hydraulic breasts</label>
+    <description>Installs a pair of hydraulic breasts.</description>
+    <workerClass>rjw.Recipe_InstallBreasts_Female</workerClass>
+    <jobString>Installing hydraulic breasts.</jobString>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+	<filter>
+          <categories>
+	    <li>Medicine</li>
+	  </categories>
+	</filter>
+	<count>1</count>
+      </li>
+      <li>
+	<filter>
+	  <thingDefs>
+	    <li>HydraulicBreasts</li>
+	  </thingDefs>
+	</filter>
+	<count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+	<li>HydraulicBreasts</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>HydraulicBreasts</addsHediff>
+  </RecipeDef>
+  
+    <RecipeDef ParentName="AnalSurgery">
+    <defName>InstallHydraulicAnus</defName>
+    <label>install hydraulic anus</label>
+    <description>Installs a hydraulic anus.</description>
+    <workerClass>rjw.Recipe_InstallAnus</workerClass>
+    <jobString>Installing hydraulic anus.</jobString>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+	<filter>
+          <categories>
+	    <li>Medicine</li>
+	  </categories>
+	</filter>
+	<count>1</count>
+      </li>
+      <li>
+	<filter>
+	  <thingDefs>
+	    <li>HydraulicAnus</li>
+	  </thingDefs>
+	</filter>
+	<count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+	<li>HydraulicAnus</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>HydraulicVagina</addsHediff>
+  </RecipeDef>
+  
   <RecipeDef ParentName="SexReassignment">
     <defName>AttachPegDick</defName>
     <label>attach peg dick</label>
@@ -675,6 +948,78 @@
     <addsHediff>BionicPenis</addsHediff>
   </RecipeDef>
 
+  <RecipeDef ParentName="BreastSurgery">
+    <defName>InstallBionicBreasts</defName>
+    <label>install bionic breasts</label>
+    <description>Installs a pair of bionic breasts.</description>
+    <workerClass>rjw.Recipe_InstallBreasts_Female</workerClass>
+    <jobString>Installing bionic breasts.</jobString>
+    <workAmount>2000</workAmount>
+    <ingredients>
+      <li>
+	<filter>
+          <categories>
+	    <li>Medicine</li>
+	  </categories>
+	</filter>
+	<count>1</count>
+      </li>
+      <li>
+	<filter>
+	  <thingDefs>
+	    <li>BionicBreasts</li>
+	  </thingDefs>
+	</filter>
+	<count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+	<li>BionicBreasts</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>BionicBreasts</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AnalSurgery">
+    <defName>InstallBionicAnus</defName>
+    <label>install bionic anus</label>
+    <description>Installs a bionic anus.</description>
+    <workerClass>rjw.Recipe_InstallAnus</workerClass>
+    <jobString>Installing bionic anus.</jobString>
+    <workAmount>2000</workAmount>
+    <ingredients>
+      <li>
+	<filter>
+          <categories>
+	    <li>Medicine</li>
+	  </categories>
+	</filter>
+	<count>1</count>
+      </li>
+      <li>
+	<filter>
+	  <thingDefs>
+	    <li>BionicAnus</li>
+	  </thingDefs>
+	</filter>
+	<count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+      <thingDefs>
+	<li>BionicAnus</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>BionicAnus</addsHediff>
+  </RecipeDef>
+
   <!-- Remove privates -->
 
   <RecipeDef ParentName="SexReassignment">
@@ -701,7 +1046,7 @@
     </fixedIngredientFilter>
   </RecipeDef>
 
-  <RecipeDef ParentName="SexReassignment">
+  <RecipeDef ParentName="BreastSurgery">
     <defName>RemoveBreasts</defName>
     <label>remove breasts</label>
     <description>Removes breasts.</description>
@@ -725,7 +1070,7 @@
     </fixedIngredientFilter>
   </RecipeDef>
 
-  <RecipeDef ParentName="SexReassignment">
+  <RecipeDef ParentName="AnalSurgery">
     <defName>RemoveAnus</defName>
     <label>remove anus</label>
     <description>Removes anus.</description>
