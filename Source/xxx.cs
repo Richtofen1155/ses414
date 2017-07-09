@@ -309,7 +309,7 @@ namespace rjw
 
                     var prenymph_att = Mathf.Clamp01(base_attraction * orientation_factor * age_factor * body_factor * trait_factor * opinion_factor * horniness_factor);
                     var final_att = (!is_nympho(fucker)) ? prenymph_att : 0.25f + 0.75f * prenymph_att;
-                    Log.Message("would_fuck( " + fucker.Name + ", " + p.Name + " ) - prenymph_att = " + prenymph_att.ToString() + ", final_att = " + final_att.ToString());
+                    //Log.Message("would_fuck( " + fucker.Name + ", " + p.Name + " ) - prenymph_att = " + prenymph_att.ToString() + ", final_att = " + final_att.ToString());
 
                     return final_att;
 
@@ -635,7 +635,7 @@ namespace rjw
         }
 
         public static bool AttemptAnalRape(Pawn rapist, Pawn victim) {
-            Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
+            //Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
             return true;
         }
     }

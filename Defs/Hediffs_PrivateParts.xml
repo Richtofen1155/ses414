@@ -184,7 +184,7 @@
         </statOffsets>
       </li>
     </stages>
-    <spawnThingOnRemoved>Vagina</spawnThingOnRemoved>
+    <spawnThingOnRemoved>TightVagina</spawnThingOnRemoved>
   </HediffDef>
 
   <HediffDef ParentName="NaturalRegularPrivatePartBase">

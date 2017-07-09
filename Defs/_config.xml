@@ -48,11 +48,15 @@
     <!-- Nymphs won't join-in-bed colonists above this threshold and raping pawns are less likely to hit prisoners
          above this threshold. For reference, the core game considers "severe" pain to be 0.8. -->
     <significant_pain_threshold>0.6</significant_pain_threshold>
+    <extreme_pain_threshold>0.8</extreme_pain_threshold>
+    <base_chance_to_hit_prisoner>0.50</base_chance_to_hit_prisoner>
     <max_nymph_fraction>0.99</max_nymph_fraction>
     <opp_inf_initial_immunity>0.55</opp_inf_initial_immunity>
     <comfort_prisoner_rape_mtbh_mul>3.0</comfort_prisoner_rape_mtbh_mul>
     <nymph_spawn_with_std_mul>3.0</nymph_spawn_with_std_mul>
     <chance_to_rim>0.0075</chance_to_rim>
+    <min_ticks_between_hits>500</min_ticks_between_hits>
+    <max_ticks_between_hits>700</max_ticks_between_hits>
   </rjw.config>
 
 </Defs>

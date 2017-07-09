@@ -45,27 +45,46 @@ namespace rjw {
 				return;
 			}
 
+
+            float rand_value = Rand.Value;
+            float victim_pain = p.health.hediffSet.PainTotal;
+            // bloodlust makes the aggressor more likely to hit the prisoner
+            float beating_chance = xxx.config.base_chance_to_hit_prisoner * (xxx.is_bloodlust(rapist) ? 1.25f : 1.0f);
+            // psychopath makes the aggressor more likely to hit the prisoner past the significant_pain_threshold
+            float beating_threshold = xxx.is_psychopath(rapist) ? xxx.config.extreme_pain_threshold : xxx.config.significant_pain_threshold;
+
+            //Log.Message("roll_to_hit:  rand = " + rand_value + ", beating_chance = " + beating_chance + ", victim_pain = " + victim_pain + ", beating_threshold = " + beating_threshold);
+            if ((victim_pain < beating_threshold && rand_value < beating_chance) || (rand_value < (beating_chance / 2))) {
+                //Log.Message("   done told her twice already...");
+                Verb v;
+                if (InteractionUtility.TryGetRandomVerbForSocialFight( rapist, out v)) {
+                    rapist.meleeVerbs.TryMeleeAttack(p, v);
+                }
+            }
+
+            /*
+            //if (p.health.hediffSet.PainTotal < xxx.config.significant_pain_threshold)
 			if ((Rand.Value < 0.50f) &&
-				((Rand.Value < 0.33f) ||
-				 (p.health.hediffSet.PainTotal < xxx.config.significant_pain_threshold) ||
+				((Rand.Value < 0.33f) || (p.health.hediffSet.PainTotal < xxx.config.significant_pain_threshold) ||
 			     (xxx.is_bloodlust (rapist) || xxx.is_psychopath (rapist)))) {
 				Verb v;
 				if (InteractionUtility.TryGetRandomVerbForSocialFight (rapist, out v))
 					rapist.meleeVerbs.TryMeleeAttack (p, v);
 			}
+            */
 		}
 		
 		protected override IEnumerable<Toil> MakeNewToils ()
 		{
 			duration = (int)(2500.0f * Rand.Range (0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive (70, 130);
-			ticks_between_hits = Rand.Range (500, 700);
+			ticks_between_hits = Rand.Range (xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
 			ticks_between_thrusts = 100;
 
 			if (xxx.is_bloodlust (pawn))
-				ticks_between_hits /= 2;
-			if (xxx.is_brawler (pawn))
-				ticks_between_hits /= 2;
+				ticks_between_hits = (int)(ticks_between_hits * 0.75);
+            if (xxx.is_brawler(pawn))
+                ticks_between_hits = (int)(ticks_between_hits * 0.90);
 			
 			this.FailOnDespawnedNullOrForbidden (iprisoner);
 			this.FailOn (() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated (Prisoner)));

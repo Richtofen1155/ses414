@@ -38,8 +38,8 @@ namespace rjw {
 				if (q != null) {
 					if ((q != rapist) && rapist.CanReserve (q, comfort_prisoners.max_rapists_per_prisoner) && (!q.Position.IsForbidden (rapist)) && is_healthy_enough (q)) {
 						var fuc = xxx.would_fuck(rapist, q, true);
-                        var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
-                        Log.Message(log_msg);
+                        //var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
+                        //Log.Message(log_msg);
 
 						if ((fuc > best_fuckability) && (Rand.Value < 0.9*fuc)) {
 							best_rapee = q;

@@ -9,8 +9,11 @@ using RimWorld;
 namespace rjw {
 	public class IncidentWorker_NymphJoins : IncidentWorker {
 
+        
 		protected override bool CanFireNowSub (IIncidentTarget target)
 		{
+            return true;
+            
 			if (HugsLibInj.nymphos) {
 				var m = (Map)target;
 				var colonist_count = 0;
