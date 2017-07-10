@@ -13,18 +13,20 @@
     <bleedingRateMultiplier>1.0</bleedingRateMultiplier>
   </BodyPartDef>
 
+
   <BodyPartDef>
-    <defName>Breasts</defName>
-    <label>breasts</label>
+    <defName>Chest</defName>
+    <label>chest</label>
     <hitPoints>12</hitPoints>
     <frostbiteVulnerability>0.1</frostbiteVulnerability>
     <oldInjuryBaseChance>0.015</oldInjuryBaseChance>
     <skinCovered>true</skinCovered>
     <isSolid>false</isSolid>
-    <dontSuggestAmputation>false</dontSuggestAmputation>
+    <dontSuggestAmputation>true</dontSuggestAmputation>
     <bleedingRateMultiplier>1.0</bleedingRateMultiplier>
   </BodyPartDef>
 
+  
   <BodyPartDef>
     <defName>Anus</defName>
     <label>anus</label>

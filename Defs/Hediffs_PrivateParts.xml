@@ -173,7 +173,7 @@
     <spawnThingOnRemoved>Vagina</spawnThingOnRemoved>
   </HediffDef>
 
-  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+  <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>TightVagina</defName>
     <label>tight vagina</label>
     <stages>
@@ -187,7 +187,7 @@
     <spawnThingOnRemoved>TightVagina</spawnThingOnRemoved>
   </HediffDef>
 
-  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+  <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>LooseVagina</defName>
     <label>loose vagina</label>
     <stages>
@@ -216,7 +216,7 @@
     <spawnThingOnRemoved>Breasts</spawnThingOnRemoved>
   </HediffDef>
 
-  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+  <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>SmallBreasts</defName>
     <label>small breasts</label>
     <stages>
@@ -230,7 +230,7 @@
     <spawnThingOnRemoved>SmallBreasts</spawnThingOnRemoved>
   </HediffDef>
   
-    <HediffDef ParentName="NaturalRegularPrivatePartBase">
+    <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>LargeBreasts</defName>
     <label>large breasts</label>
     <stages>
@@ -244,7 +244,7 @@
     <spawnThingOnRemoved>LargeBreasts</spawnThingOnRemoved>
   </HediffDef>
   
-  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+  <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>HugeBreasts</defName>
     <label>huge breasts</label>
     <stages>
@@ -273,7 +273,7 @@
     <spawnThingOnRemoved>Anus</spawnThingOnRemoved>
   </HediffDef>
 
-  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+  <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>TightAnus</defName>
     <label>tight anus</label>
     <stages>
@@ -287,7 +287,7 @@
     <spawnThingOnRemoved>TightAnus</spawnThingOnRemoved>
   </HediffDef>
 
-  <HediffDef ParentName="NaturalRegularPrivatePartBase">
+  <HediffDef ParentName="NaturalPrivatePartBase">
     <defName>LooseAnus</defName>
     <label>loose anus</label>
     <stages>

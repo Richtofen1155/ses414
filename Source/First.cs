@@ -23,7 +23,7 @@ namespace rjw {
 				giv.hediff = HediffDef.Named ("DummyPrivates");
 				giv.partsToAffect = new List<BodyPartDef> ();
 				giv.partsToAffect.Add (DefDatabase<BodyPartDef>.GetNamed ("Genitals"));
-                //giv.partsToAffect.Add(DefDatabase<BodyPartDef>.GetNamed("Breasts"));
+                //giv.partsToAffect.Add(DefDatabase<BodyPartDef>.GetNamed("Chest"));
                 //giv.partsToAffect.Add(DefDatabase<BodyPartDef>.GetNamed("Anus"));
 				giv.canAffectAnyLivePart = false;
 				giv.ageFractionChanceCurve = new SimpleCurve ();

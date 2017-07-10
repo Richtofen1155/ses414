@@ -42,10 +42,12 @@ namespace rjw {
 
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn (Pawn p, RecipeDef r)
 		{
-			foreach (var part in p.health.hediffSet.GetNotMissingParts ())
-				if (r.appliedOnFixedBodyParts.Contains (part.def) &&
-					((part != xxx.breasts) || (! Genital_Helper.breasts_blocked (p))))
-					yield return part;
+            if (p.gender == Gender.Female) {
+                foreach (var part in p.health.hediffSet.GetNotMissingParts())
+                    if (r.appliedOnFixedBodyParts.Contains(part.def) &&
+                        ((part != xxx.breasts) || (!Genital_Helper.breasts_blocked(p))))
+                        yield return part;
+            }
 		}
 
 	}

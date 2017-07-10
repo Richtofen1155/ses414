@@ -57,10 +57,12 @@ namespace rjw
 
         public static BodyPartRecord get_breasts(Pawn pawn)
         {
-            BodyPartRecord breastsPart = pawn.RaceProps.body.AllParts.Find((BodyPartRecord bpr) => String.Equals(bpr.def.defName, "Breasts"));
+            //Log.Message("[RJW] get_breasts( " + pawn.NameStringShort + " ) called");
+            BodyPartRecord breastsPart = pawn.RaceProps.body.AllParts.Find((BodyPartRecord bpr) => String.Equals(bpr.def.defName, "Chest"));
 
             if (breastsPart == null)
             {
+                //Log.Message("[RJW] get_breasts( " + pawn.NameStringShort + " ) - breastsPart is null");
                 return null;
             }
             return breastsPart;
@@ -178,7 +180,7 @@ namespace rjw
 
         public static bool is_sexualized (Pawn pawn)
 		{
-			//BodyPartRecord genitalPart = get_genitals(pawn);
+            //BodyPartRecord genitalPart = get_genitals(pawn);
             //BodyPartRecord breastsPart = get_breasts(pawn);
             //BodyPartRecord anusPart = get_anus(pawn);
 
@@ -198,7 +200,8 @@ namespace rjw
                                       (((hed as Hediff_Implant) != null) || ((hed as Hediff_AddedPart) != null)) &&
                                       (hed.def != dummy_privates_initializer));
            */
-            return has_genitals(pawn) && has_breasts(pawn) && has_anus(pawn);
+            return has_genitals(pawn) && has_anus(pawn);
+            //return has_genitals(pawn) && has_breasts(pawn) && has_anus(pawn);
         }
 
 		public static void sexualize_everyone () {
@@ -262,15 +265,19 @@ namespace rjw
         }
 
         public static void add_breasts(Pawn pawn) {
+            Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) called");
             BodyPartRecord breastsPart = get_breasts(pawn);
+
             if (breastsPart == null) {
-                //Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) doesn't have a breastsPart");
+                Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn doesn't have a breastsPart");
                 return;
             }
             if (has_breasts(pawn)) {
-                //Log.Message("[RJW] sexualize_pawn( " + pawn.NameStringShort + " ) already has breasts");
+                Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn already has breasts");
                 return;
             }
+
+            Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - checking gender");
 
             if (pawn.gender == Gender.Female) {
                 HediffDef bewbs;
@@ -404,7 +411,7 @@ namespace rjw
             {
 
                 var gen_rec = new BodyPartRecord();
-                gen_rec.def = DefDatabase<BodyPartDef>.GetNamed("Breasts");
+                gen_rec.def = DefDatabase<BodyPartDef>.GetNamed("Chest");
                 gen_rec.height = BodyPartHeight.Top;
                 gen_rec.depth = BodyPartDepth.Outside;
                 gen_rec.coverage = 0.1f;

@@ -9,6 +9,7 @@
         <def>Genitals</def>
         <coverage>0.02</coverage>
         <height>Bottom</height>
+        <depth>Outside</depth>
         <groups>
           <li>Torso</li>
         </groups>
@@ -20,16 +21,17 @@
     <xpath>//BodyDef[defName = "Human"]/corePart/parts</xpath>
     <value>
       <li>
-        <def>Breasts</def>
-        <coverage>0.10</coverage>
+        <def>Chest</def>
+        <coverage>0.0</coverage>
         <height>Top</height>
+        <depth>Outside</depth>
         <groups>
           <li>Torso</li>
         </groups>
       </li>
     </value>
   </Operation>
-
+  
   <Operation Class="PatchOperationAdd">
     <xpath>//BodyDef[defName = "Human"]/corePart/parts</xpath>
     <value>
@@ -37,6 +39,7 @@
         <def>Anus</def>
         <coverage>0.01</coverage>
         <height>Bottom</height>
+        <depth>Inside</depth>
         <groups>
           <li>Torso</li>
         </groups>
@@ -52,6 +55,7 @@
         <def>Genitals</def>
         <coverage>0.02</coverage>
         <height>Bottom</height>
+        <depth>Outside</depth>
       </li>
     </value>
   </Operation>
@@ -60,13 +64,14 @@
     <xpath>//BodyDef[defName != "Human"]/corePart/parts</xpath>
     <value>
       <li>
-        <def>Breasts</def>
-        <coverage>0.10</coverage>
+        <def>Chest</def>
+        <coverage>0.02</coverage>
         <height>Top</height>
+        <depth>Outside</depth>
       </li>
     </value>
   </Operation>
-
+  
   <Operation Class="PatchOperationAdd">
     <xpath>//BodyDef[defName != "Human"]/corePart/parts</xpath>
     <value>
@@ -74,6 +79,7 @@
         <def>Anus</def>
         <coverage>0.01</coverage>
         <height>Bottom</height>
+        <depth>Inside</depth>
       </li>
     </value>
   </Operation>

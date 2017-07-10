@@ -21,7 +21,7 @@
   
   <RecipeDef Abstract="True" Name="BreastSurgery" ParentName="SurgeryFlesh">
     <appliedOnFixedBodyParts>
-      <li>Breasts</li>
+      <li>Chest</li>
     </appliedOnFixedBodyParts>
     <recipeUsers>
       <li>Human</li>

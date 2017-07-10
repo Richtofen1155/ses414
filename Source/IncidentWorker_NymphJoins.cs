@@ -11,9 +11,7 @@ namespace rjw {
 
         
 		protected override bool CanFireNowSub (IIncidentTarget target)
-		{
-            return true;
-            
+		{            
 			if (HugsLibInj.nymphos) {
 				var m = (Map)target;
 				var colonist_count = 0;

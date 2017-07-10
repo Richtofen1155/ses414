@@ -34,16 +34,17 @@ namespace rjw {
 		public int sex_free_for_all_age;
         public int sex_minimum_age;
 
-		public float significant_pain_threshold;
-        public float extreme_pain_threshold;
+		public float significant_pain_threshold;    // 0.6
+        public float extreme_pain_threshold;        // 0.8
         public float base_chance_to_hit_prisoner;   // 50
+        public int min_ticks_between_hits;          // 500
+        public int max_ticks_between_hits;          // 700
 
-		public float max_nymph_fraction;
+        public float max_nymph_fraction;
 		public float opp_inf_initial_immunity;
 		public float comfort_prisoner_rape_mtbh_mul;
 		public float nymph_spawn_with_std_mul;
 		public float chance_to_rim;
-        public int min_ticks_between_hits;    // 500
-        public int max_ticks_between_hits;    // 700
+
 	}
 }
