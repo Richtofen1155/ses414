@@ -90,7 +90,7 @@ namespace rjw {
                 ticks_between_hits = (int)(ticks_between_hits * 0.90);
 			
 			this.FailOnDespawnedNullOrForbidden (iprisoner);
-			this.FailOn (() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated (Prisoner)));
+            this.FailOn(() => (!Prisoner.health.capacities.CanBeAwake)); // || (!comfort_prisoners.is_designated (Prisoner)));
             this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner)); // Fail if someone else reserves the prisoner before the pawn arrives
             //this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, -1, null, true)); // ok if someone else reserves the prisoner before the pawn arrives
             yield return Toils_Goto.GotoThing (iprisoner, PathEndMode.OnCell);

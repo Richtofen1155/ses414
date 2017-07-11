@@ -32,29 +32,15 @@ namespace rjw {
 			List<Designation> invalid_designations = null;
 			Pawn best_rapee = null;
 			var best_fuckability = 0.20f; // Don't rape prisoners with <20% fuckability
-            DesignationDef designation_def = xxx.config.rape_me_sticky_enabled ? comfort_prisoners.designation_def : comfort_prisoners.designation_def_no_sticky;
-			foreach (var des in m.designationManager.SpawnedDesignationsOfDef (designation_def)) {
-				var q = check_cp_designation (m, des);
-				if (q != null) {
-					if ((q != rapist) && rapist.CanReserve (q, comfort_prisoners.max_rapists_per_prisoner) && (!q.Position.IsForbidden (rapist)) && is_healthy_enough (q)) {
-						var fuc = xxx.would_fuck(rapist, q, true);
-                        //var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
-                        //Log.Message(log_msg);
-
-						if ((fuc > best_fuckability) && (Rand.Value < 0.9*fuc)) {
-							best_rapee = q;
-							best_fuckability = fuc;
-						}
-					}
-				} else {
-					if (invalid_designations == null)
-						invalid_designations = new List<Designation> ();
-					invalid_designations.Add (des);
-				}
-			}
-			if (!invalid_designations.NullOrEmpty<Designation> ())
-				foreach (var invalid_des in invalid_designations)
-					m.designationManager.RemoveDesignation (invalid_des);
+            foreach (var target in m.mapPawns.AllPawns) {
+                if (target != rapist && rapist.CanReserve( target, comfort_prisoners.max_rapists_per_prisoner) && !target.Position.IsForbidden(rapist) && is_healthy_enough(target)) {
+                    var fuc = xxx.would_fuck(rapist, target, true);
+                    if ((fuc > best_fuckability) && (Rand.Value < 0.9 * fuc)) {
+                        best_rapee = target;
+                        best_fuckability = fuc;
+                    }
+                }
+            }
 			return best_rapee;
 		}
 
@@ -65,14 +51,18 @@ namespace rjw {
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null)) {
 				
                 // don't allow pawns marked as comfort prisoners to rape others
-				if (p.health.capacities.CanBeAwake && !comfort_prisoners.is_designated(p) && xxx.can_fuck (p)) {
+				if (p.health.capacities.CanBeAwake && xxx.can_fuck (p)) {
 				
 					var prisoner = find_prisoner_to_rape(p, p.Map);
 
-					if (prisoner != null)
-						return new Job (xxx.comfort_prisoner_rapin, prisoner);
-					else
-						p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range (75, 150);
+
+                    if (prisoner != null) {
+                        Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
+                        return new Job(DefDatabase<JobDef>.GetNamed("RandomRape"), prisoner);
+                    } else {
+                        Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
+                        p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
+                    }
 					
 				}
 			}
