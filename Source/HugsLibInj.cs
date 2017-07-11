@@ -6,6 +6,7 @@ using RimWorld;
 using Verse;
 using HugsLib;
 using HugsLib.Settings;
+using UnityEngine.SceneManagement;
 
 namespace rjw
 {
@@ -41,9 +42,15 @@ namespace rjw
         public static uint sex_free_for_all_age;
         public static uint sex_minimum_age;
 
+
+        public override void Initialize() {
+            Logger.Message("Initialize() called");
+            base.Initialize();
+        }
+
         public override void DefsLoaded()
         {
-
+            Logger.Message("DefsLoaded() called");
             nymphs_join = Settings.GetHandle<bool>("nymphs_join", "Nymphs join", "Will nymphos join your colony", true);
             STD_floor_catch = Settings.GetHandle<bool>("STD_floor_catch", "STD from floors", "If enabled, STD will be catched not only from the persons carrying it, but also from the environment", true);
             reipu_beating = Settings.GetHandle<bool>("reipu_beating", "Prisoners beating", "Will comfort prisoners get beaten in the acts", true);
@@ -58,13 +65,63 @@ namespace rjw
 
         }
 
+        public override void Update() {
+            base.Update();
+        }
+
+        public override void FixedUpdate() {
+            base.FixedUpdate();
+        }
+
+        public override void MapComponentsInitializing(Map map) {
+            Logger.Message("MapComponentsInitializing() called");
+            base.MapComponentsInitializing(map);
+        }
+
+        public override void MapDiscarded(Map map) {
+            Logger.Message("MapDiscarded() called");
+            base.MapDiscarded(map);
+        }
+
+        public override void MapGenerated(Map map) {
+            Logger.Message("MapGenerated() called");
+            base.MapGenerated(map);
+        }
+
+        public override void MapLoaded(Map map) {
+            Logger.Message("MapLoaded() called");
+            base.MapLoaded(map);
+        }
+
+        public override void OnGUI() {
+            base.OnGUI();
+        }
+
+        public override void SceneLoaded(Scene scene) {
+            Logger.Message("SceneLoaded() called");
+            base.SceneLoaded(scene);
+        }
+
         public override void SettingsChanged()
         {
+            Logger.Message("SettingsChanged() called");
             nymphos = nymphs_join.Value;
             std_floor = STD_floor_catch.Value;
             prisoner_beating = reipu_beating.Value;
             sex_free_for_all_age = option_sex_free_for_all_age.Value;
             sex_minimum_age = option_sex_minimum_age.Value;
         }
+
+        /*
+        public override void Tick(int currentTick) {
+            base.Tick(currentTick);
+        }
+        */
+
+        public override void WorldLoaded() {
+            Logger.Message("WorldLoaded() called");
+            base.WorldLoaded();
+        }
+
     }
 }

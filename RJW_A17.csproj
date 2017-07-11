@@ -78,7 +78,11 @@
     <Compile Include="Source\InteractionWorker_AnalRapeAttempt.cs" />
     <Compile Include="Source\JobDriver_ComfortPrisonerRapin.cs" />
     <Compile Include="Source\JobDriver_GettinRaped.cs" />
+    <Compile Include="Source\JobDriver_RandomRape.cs" />
+    <Compile Include="Source\JobDriver_ViolateCorpse.cs" />
     <Compile Include="Source\JobGiver_ComfortPrisonerRape.cs" />
+    <Compile Include="Source\JobGiver_RandomRape.cs" />
+    <Compile Include="Source\JobGiver_ViolateCorpse.cs" />
     <Compile Include="Source\MapCom_Injector.cs" />
     <Compile Include="Source\comfort_prisoners.cs" />
     <Compile Include="Source\Designator_ComfortPrisoner.cs" />
@@ -101,9 +105,13 @@
     <Compile Include="Source\Recipe_RemoveAnus.cs" />
     <Compile Include="Source\Recipe_RemoveBreasts.cs" />
     <Compile Include="Source\std.cs" />
+    <Compile Include="Source\ThinkNode_ChancePerHour_Necro.cs" />
+    <Compile Include="Source\ThinkNode_ChancePerHour_RandomRape.cs" />
     <Compile Include="Source\ThinkNode_ChancePerHour_RapeCP.cs" />
     <Compile Include="Source\ThinkNode_ConditionalCanRapeCP.cs" />
     <Compile Include="Source\ThinkNode_ConditionalFrustrated.cs" />
+    <Compile Include="Source\ThinkNode_ConditionalNecro.cs" />
+    <Compile Include="Source\ThinkNode_ConditionalRapist.cs" />
     <Compile Include="Source\ThoughtWorker_ItchyCrotch.cs" />
     <Compile Include="Source\ThoughtWorker_SyphiliticThoughts.cs" />
     <Compile Include="Source\ThoughtWorker_WastingAway.cs" />

@@ -3,6 +3,44 @@
 <ThinkTrees>
 
   <ThinkTreeDef>
+    <defName>ViolateCorpseTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalNecro">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_Necro">
+              <subNodes>
+                <li Class="rjw.JobGiver_ViolateCorpse"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>RandomRapeTree</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>16</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="rjw.ThinkNode_ConditionalRapist">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ChancePerHour_RandomRape">
+              <subNodes>
+                <li Class="rjw.JobGiver_RandomRape"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <ThinkTreeDef>
     <defName>FapTree</defName>
     <insertTag>Humanlike_PostMentalState</insertTag>
     <insertPriority>15</insertPriority>
@@ -87,15 +125,15 @@
     <insertPriority>15</insertPriority>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
-	<li Class="rjw.ThinkNode_ConditionalNympho">
-	  <subNodes>
-	    <li Class="rjw.ThinkNode_ConditionalHorny">
-	      <subNodes>
-		<li Class="rjw.JobGiver_NymphJoinInBed" />
-	      </subNodes>
-	    </li>
-	  </subNodes>
-	</li>
+        <li Class="rjw.ThinkNode_ConditionalNympho">
+          <subNodes>
+            <li Class="rjw.ThinkNode_ConditionalHorny">
+              <subNodes>
+                <li Class="rjw.JobGiver_NymphJoinInBed" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>

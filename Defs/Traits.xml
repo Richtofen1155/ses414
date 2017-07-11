@@ -35,4 +35,16 @@
       <li>Violent</li>
     </requiredWorkTags>
   </TraitDef>
+
+  <TraitDef>
+    <defName>Necrophiliac</defName>
+    <commonality>0.01</commonality>
+    <degreeDatas>
+      <li>
+        <label>Necrophiliac</label>
+        <description>Dead girls can't say no...</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+  
 </TraitDefs>

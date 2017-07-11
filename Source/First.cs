@@ -17,6 +17,7 @@ namespace rjw {
 		// Generate a HediffGiver for the dummy hediff, then inject it into the OrganicStandard HediffGiverSet
 		static void inject_sexualizer ()
 		{
+            Log.Message("First::inject_sexualizer() called");
 			var hgs = DefDatabase<HediffGiverSetDef>.GetNamed ("OrganicStandard");
 			if (hgs != null) {
 				var giv = new HediffGiver_Birthday ();
@@ -38,6 +39,7 @@ namespace rjw {
 
 		static void show_bpr (String body_part_record_def_name)
 		{
+           
 			var bpr = BodyDefOf.Human.AllParts.Find ((BodyPartRecord can) => String.Equals (can.def.defName, body_part_record_def_name));
 			Log.Message (body_part_record_def_name + " BPR internals:");
 			Log.Message ("  def: " + bpr.def.ToString ());
@@ -73,6 +75,7 @@ namespace rjw {
 
 		static void inject_recipes ()
 		{
+            Log.Message("[RJW] First::inject_recipes");
 			var cra_spo = DefDatabase<ThingDef>.GetNamed ("CraftingSpot");
 			var mac_ben = DefDatabase<ThingDef>.GetNamed ("TableMachining");
 			var tai_ben = DefDatabase<ThingDef>.GetNamed ("ElectricTailoringBench");
@@ -107,6 +110,7 @@ namespace rjw {
 
         static void inject_items ()
         {
+            Log.Message("[RJW] First::inject_items() called");
             if (xxx.config.whore_beds_enabled)
             {
                 var bedDefs = DefDatabase<ThingDef>.AllDefsListForReading.Where(def => def.thingClass == typeof(Building_Bed)).ToArray();
@@ -153,6 +157,7 @@ namespace rjw {
 
 		static First ()
 		{
+            Log.Message("[RJW] First::First() called");
 			inject_sexualizer();
 			//inject_genitals();
 			inject_recipes();

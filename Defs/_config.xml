@@ -25,6 +25,8 @@
     <!-- nymph_joiners_enabled has no effect any more -->
     <nymph_joiners_enabled>true</nymph_joiners_enabled>
     <whore_beds_enabled>false</whore_beds_enabled>
+    <necro_enabled>true</necro_enabled>
+    <random_rape_enabled>true</random_rape_enabled>
 
     <show_regular_dick_and_vag>false</show_regular_dick_and_vag>
 

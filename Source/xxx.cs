@@ -28,6 +28,7 @@ namespace rjw
 
         public static TraitDef nymphomaniac = TraitDef.Named("Nymphomaniac");
         public static TraitDef rapist = TraitDef.Named("Rapist");
+        public static TraitDef necrophiliac = TraitDef.Named("Necrophiliac");
 
         public static HediffDef immunodeficiency = DefDatabase<HediffDef>.GetNamed("Immunodeficiency");
 
@@ -111,6 +112,17 @@ namespace rjw
             }
 
             return pawn.story.traits.HasTrait(TraitDefOf.Bloodlust);
+        }
+
+        public static bool is_rapist(Pawn pawn) {
+            //if (pawn.story == null || pawn.story.traits == null) {
+            //    return false;
+            //}
+            return pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TraitDef.Named("Rapist"));
+        }
+
+        public static bool is_necrophiliac(Pawn pawn) {
+            return (pawn.story != null && pawn.story.traits != null && pawn.story.traits.HasTrait(TraitDef.Named("Necrophiliac")));
         }
 
         public static bool is_brawler(Pawn pawn) {
@@ -635,7 +647,7 @@ namespace rjw
         }
 
         public static bool AttemptAnalRape(Pawn rapist, Pawn victim) {
-            //Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
+            Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
             return true;
         }
     }

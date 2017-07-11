@@ -74,4 +74,17 @@
     <reportString>equipping</reportString>
   </JobDef>
 
+  <JobDef>
+    <defName>ViolateCorpse</defName>
+    <driverClass>rjw.JobDriver_ViolateCorpse</driverClass>
+    <reportString>violating corpse</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>RandomRape</defName>
+    <driverClass>rjw.JobDriver_RandomRape</driverClass>
+    <reportString>randomly raping</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
 </JobDefs>
