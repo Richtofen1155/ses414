@@ -19,6 +19,8 @@ namespace rjw {
 		
 		protected TargetIndex iprisoner = TargetIndex.A;
 
+        private List<Apparel> worn_apparel;
+
         // Same as in JobDriver_Lovin
         private static readonly SimpleCurve LovinIntervalHoursFromAgeCurve = new SimpleCurve
         {
@@ -111,6 +113,21 @@ namespace rjw {
 					dri.rapist_count += 1;
 					dri.increase_time (duration);
 				}
+
+                // Try to take off the attacker's clothing
+                worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
+                while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
+                    Apparel apparel = pawn.apparel.WornApparel.RandomElement<Apparel>();
+                    pawn.apparel.Remove(apparel);
+                }
+                //pawn.apparel.WornApparel.RemoveAll(null);
+
+                //List<Apparel> worn = pawn.apparel.WornApparel;
+                //while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
+                //    Apparel apparel = pawn.apparel.WornApparel.RemoveAll(null);
+                //    pawn.apparel.Remove(apparel);
+                //}
+ 
 			};
 			rape.tickAction = delegate {
 				if (pawn.IsHashIntervalTick (ticks_between_hearts))
@@ -138,6 +155,12 @@ namespace rjw {
 						xxx.aftersex (Prisoner, pawn, pawn);
 						Prisoner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (Prisoner);
 					}
+
+                    if (pawn.apparel != null) {
+                        foreach (Apparel apparel in worn_apparel) {
+                            pawn.apparel.Wear(apparel);//  WornApparel.Add(apparel);
+                        }
+                    }
                 },
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};

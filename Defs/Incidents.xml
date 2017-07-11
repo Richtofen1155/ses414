@@ -14,6 +14,7 @@
     <minRefireDays>9999</minRefireDays>
   </IncidentDef>
 
+  <!-- I dont think this is needed anymore -->
   <IncidentDef>
     <defName>SexualizeThePawns</defName>
     <label>sexualize the pawns</label>

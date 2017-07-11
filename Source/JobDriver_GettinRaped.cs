@@ -29,6 +29,8 @@ namespace rjw {
 			ticks_between_hearts = Rand.RangeInclusive (70, 130);
 			was_laying_down = (pawn.jobs.curDriver != null) && pawn.jobs.curDriver.layingDown != Verse.AI.LayingDownState.NotLaying;
 			
+
+
 			var get_raped = new Toil ();
 			get_raped.defaultCompleteMode = ToilCompleteMode.Never;
 			get_raped.initAction = delegate {
@@ -36,7 +38,11 @@ namespace rjw {
 				pawn.jobs.curDriver.layingDown = Verse.AI.LayingDownState.NotLaying;
 				pawn.jobs.curDriver.asleep = false;
 				pawn.mindState.awokeVoluntarily = false;
-			};
+                // drop clothing
+                if (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
+                    pawn.apparel.DropAll(pawn.Position, false);
+                }
+            };
 			get_raped.tickAction = delegate {
 				--ticks_remaining;
 				if ((ticks_remaining <= 0) || (rapist_count <= 0))
