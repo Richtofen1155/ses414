@@ -224,7 +224,7 @@
     <label>breasts</label>
     <description>A pair of severed breasts.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>boobs</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -238,7 +238,7 @@
     <label>small breasts</label>
     <description>A pair of severed small breasts.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>boobs</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -252,7 +252,7 @@
     <label>large breasts</label>
     <description>A pair of severed large breasts.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>boobs</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -266,7 +266,7 @@
     <label>huge breasts</label>
     <description>A pair of severed huge breasts.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>boobs</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -281,7 +281,7 @@
     <label>anus</label>
     <description>A severed anus... yeah I don't know what that is either.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -295,7 +295,7 @@
     <label>tight anus</label>
     <description>A severed tight anus... yeah I don't know what that is either.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -307,9 +307,9 @@
   <ThingDef ParentName="BodyPartNaturalBase">
     <defName>LooseAnus</defName>
     <label>loose anus</label>
-    <description>Hey, look a donut.  Ewww, it's an anus.</description>
+    <description>Hey, look a donut.  Just kidding, it's an anus.</description>
     <graphicData>
-      <texPath>vagina</texPath>
+      <texPath>anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -355,7 +355,7 @@
     <label>hydraulic breasts</label>
     <description>Low-tech prosthetic breasts.  Conical metal with increased pumping action, spray your friends.</description>
     <graphicData>
-      <texPath>hydraulic_vagina</texPath>
+      <texPath>hydraulic_boobs</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -370,7 +370,7 @@
     <label>hydraulic anus</label>
     <description>A low-tech prosthetic anus. Its cold metal grip is uncomfortable but it has great suction power.</description>
     <graphicData>
-      <texPath>hydraulic_vagina</texPath>
+      <texPath>hydraulic_anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -424,10 +424,10 @@
     <label>bionic breasts</label>
     <description>
       High-tech prosthetic breasts. Features include:
-      - Resizes to fit any desired size
+      - Resizes to any desired size
     </description>
     <graphicData>
-      <texPath>bionic_vagina</texPath>
+      <texPath>bionic_boobs</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -446,7 +446,7 @@
       - Auto-lubrication with boro-graphitic pseudofluid, smooth but never slimy (includes toggleable sliminess in case you're into that)
     </description>
     <graphicData>
-      <texPath>bionic_vagina</texPath>
+      <texPath>bionic_anus</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
