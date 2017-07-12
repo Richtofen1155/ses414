@@ -158,6 +158,11 @@ namespace rjw {
 		static First ()
 		{
             Log.Message("[RJW] First::First() called");
+
+            // check for required mods
+            //CheckModRequirements();
+            //CheckIncompatibleMods();
+
 			inject_sexualizer();
 			//inject_genitals();
 			inject_recipes();
@@ -172,5 +177,47 @@ namespace rjw {
 			har.PatchAll(Assembly.GetExecutingAssembly ());
 			PATCH_Pawn_ApparelTracker_TryDrop.apply(har);
 		}
-	}
+
+        internal static void CheckModRequirements() {
+            Log.Message("First::CheckModRequirements() called");
+            List<string> required_mods = new List<string> {
+                "HugsLib",
+            };
+            foreach (string required_mod in required_mods) {
+                bool found = false;
+                foreach (ModMetaData installed_mod in ModLister.AllInstalledMods) {
+                    if (installed_mod.Active && installed_mod.Name.Contains(required_mod)) {
+                        found = true;
+                    }
+                        
+                    if (!found) {
+                        ErrorMissingRequirement(required_mod);
+                    }
+                }
+            }
+            
+        }
+
+        internal static void CheckIncompatibleMods() {
+            Log.Message("First::CheckIncompatibleMods() called");
+            List<string> incompatible_mods = new List<string> {
+                "Bogus Test Mod That Doesn't Exist"
+            };
+            foreach (string incompatible_mod in incompatible_mods) {
+                foreach (ModMetaData installed_mod in ModLister.AllInstalledMods) {
+                    if (installed_mod.Active && installed_mod.Name.Contains(incompatible_mod)) {
+                        ErrorIncompatibleMod(installed_mod);
+                    }
+                }
+            }
+        }
+
+        internal static void ErrorMissingRequirement(string missing) {
+            Log.Error("Initialization error:  Unable to find required mod '" + missing + "' in mod list");
+        }
+
+        internal static void ErrorIncompatibleMod(ModMetaData othermod) {
+            Log.Error("Initialization Error:  Incompatible mod '" + othermod.Name + "' detected in mod list");
+        }
+    }
 }
