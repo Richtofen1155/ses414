@@ -609,7 +609,7 @@ namespace rjw
                 try {
                     impregnate(pawn, partner);
                 } catch {
-                    Log.Message("RimworldChildren not present, can't impregnate :(");
+                    Log.Message("RimWorldChildren not present, can't impregnate :(");
                 }
             }
 
