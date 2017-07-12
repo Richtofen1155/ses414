@@ -7,6 +7,7 @@ using Verse;
 using HugsLib;
 using HugsLib.Settings;
 using UnityEngine.SceneManagement;
+using HugsLib.Core;
 
 namespace rjw
 {
@@ -19,6 +20,11 @@ namespace rjw
             {
                 return "RJW";
             }
+        }
+
+        public override VersionShort GetVersion() {
+            Logger.Message("GetVersion() called");
+            return base.GetVersion();
         }
 
         private SettingHandle<bool> nymphs_join;

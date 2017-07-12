@@ -1,5 +1,12 @@
+v1.2 to v1.3:
+  - Added breast and anus body parts, along with hydraulic/bionic alternatives
+  - Added necrophilia
+  - Added random rapes
+  - Exposed more constants in configuration file
+
 v1.1 to v1.2:
   - Updated to A17
+  - Enabled comfort prisoner designation on all colony pawns, prisoners, and faction animals
   - Enabled pregnancy for raped pawns via RimWorldChildren
   - Updated mod options
 
