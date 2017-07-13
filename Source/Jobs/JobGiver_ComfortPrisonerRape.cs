@@ -36,7 +36,7 @@ namespace rjw {
 			foreach (var des in m.designationManager.SpawnedDesignationsOfDef (designation_def)) {
 				var q = check_cp_designation (m, des);
 				if (q != null) {
-					if ((q != rapist) && rapist.CanReserve (q, comfort_prisoners.max_rapists_per_prisoner) && (!q.Position.IsForbidden (rapist)) && is_healthy_enough (q)) {
+					if ((q != rapist) && rapist.CanReserve (q, comfort_prisoners.max_rapists_per_prisoner, 0) && (!q.Position.IsForbidden (rapist)) && is_healthy_enough (q)) {
 						var fuc = xxx.would_fuck(rapist, q, true);
                         //var log_msg = rapist.Name + " -> " + q.Name + " (" + fuc.ToString() + " / " + best_fuckability.ToString() + ")";
                         //Log.Message(log_msg);

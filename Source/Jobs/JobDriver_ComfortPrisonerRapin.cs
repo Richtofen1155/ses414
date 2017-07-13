@@ -87,23 +87,25 @@ namespace rjw {
 				ticks_between_hits = (int)(ticks_between_hits * 0.75);
             if (xxx.is_brawler(pawn))
                 ticks_between_hits = (int)(ticks_between_hits * 0.90);
-			
+
+            //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - setting fail conditions");
 			this.FailOnDespawnedNullOrForbidden (iprisoner);
 			this.FailOn (() => (!Prisoner.health.capacities.CanBeAwake) || (!comfort_prisoners.is_designated (Prisoner)));
-            this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner)); // Fail if someone else reserves the prisoner before the pawn arrives
-            //this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, -1, null, true)); // ok if someone else reserves the prisoner before the pawn arrives
+            this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
             yield return Toils_Goto.GotoThing (iprisoner, PathEndMode.OnCell);
 
 
             var rape = new Toil ();
 			rape.initAction = delegate {
-				pawn.Reserve (Prisoner, comfort_prisoners.max_rapists_per_prisoner);
+                //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - reserving prisoner");
+				pawn.Reserve (Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
 
                 //// Trying to add some interactions and social logs
                 //InteractionDef intDef = DefDatabase<InteractionDef>.GetNamed("AnalRaped");
                 //if (!xxx.is_animal(pawn) && !xxx.is_animal(Prisoner))
                 //    pawn.interactions.TryInteractWith(Prisoner, intDef);
 
+                //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Setting victim job driver");
 				var dri = Prisoner.jobs.curDriver as JobDriver_GettinRaped;
 				if (dri == null) {
 					var gettin_raped = new Job (xxx.gettin_raped);
@@ -114,20 +116,20 @@ namespace rjw {
 					dri.increase_time (duration);
 				}
 
+                //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Removing victim's clothing");
                 // Try to take off the attacker's clothing and add to inventory
-                worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
-                while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
-                    Apparel apparel = pawn.apparel.WornApparel.RandomElement<Apparel>();
-                    pawn.apparel.Remove(apparel);
-                    pawn.inventory.innerContainer.TryAdd(apparel);
+                if (pawn.apparel != null) {
+                    worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
+                    while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
+                        Apparel apparel = pawn.apparel.WornApparel.RandomElement<Apparel>();
+                        pawn.apparel.Remove(apparel);
+                        if (pawn.inventory != null && pawn.inventory.innerContainer != null) {
+                        
+                            pawn.inventory.innerContainer.TryAdd(apparel);
+                        }
+                    }
                 }
-                //pawn.apparel.WornApparel.RemoveAll(null);
 
-                //List<Apparel> worn = pawn.apparel.WornApparel;
-                //while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
-                //    Apparel apparel = pawn.apparel.WornApparel.RemoveAll(null);
-                //    pawn.apparel.Remove(apparel);
-                //}
  
 			};
 			rape.tickAction = delegate {
@@ -139,17 +141,27 @@ namespace rjw {
 					roll_to_hit (pawn, Prisoner);
 			};
 			rape.AddFinishAction (delegate {
+                //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Clearing victim job");
 				if ((Prisoner.jobs != null) &&
 			    	(Prisoner.jobs.curDriver != null) &&
 			    	(Prisoner.jobs.curDriver as JobDriver_GettinRaped != null))
 	               		(Prisoner.jobs.curDriver as JobDriver_GettinRaped).rapist_count -= 1;
-			});
+
+                //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Putting clothing back on");
+                if (pawn.apparel != null) {
+                    foreach (Apparel apparel in worn_apparel) {
+                        pawn.inventory.innerContainer.Remove(apparel);
+                        pawn.apparel.Wear(apparel);
+                    }
+                }
+            });
 			rape.defaultCompleteMode = ToilCompleteMode.Delay;
 			rape.defaultDuration = duration;
 			yield return rape;
 
 			yield return new Toil {
 				initAction = delegate {
+                    //Log.Message("JobDriver_ComfortPrisonerRapin::MakeNewToils() - Calling aftersex");
                     xxx.aftersex (pawn, Prisoner, pawn);
 					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (pawn);
 					if (! Prisoner.Dead) {
@@ -157,11 +169,7 @@ namespace rjw {
 						Prisoner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (Prisoner);
 					}
 
-                    if (pawn.apparel != null) {
-                        foreach (Apparel apparel in worn_apparel) {
-                            pawn.apparel.Wear(apparel);
-                        }
-                    }
+
                 },
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};

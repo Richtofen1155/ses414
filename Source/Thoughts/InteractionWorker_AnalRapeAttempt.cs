@@ -16,7 +16,7 @@ namespace rjw {
         }
         public override void Interacted(Pawn rapist, Pawn victim, List<RulePackDef> extraSentencePacks) {
             if (rapist == null || victim == null) return;
-            Log.Message("[RJW] InteractionWorker_AnalRapeAttempt::Interacted( " + rapist.NameStringShort + ", " + victim.NameStringShort + " ) called");
+            //Log.Message("[RJW] InteractionWorker_AnalRapeAttempt::Interacted( " + rapist.NameStringShort + ", " + victim.NameStringShort + " ) called");
             xxx.AttemptAnalRape(rapist, victim);
         }
     }

@@ -34,8 +34,8 @@ namespace rjw {
 			this.FailOnDespawnedOrNull (ipartner);
 			this.FailOn (() => ! Partner.health.capacities.CanBeAwake);
 			this.KeepLyingDown (ibed);
-			yield return Toils_Reserve.Reserve (ipartner, 1);
-			yield return Toils_Reserve.Reserve (ibed, Bed.SleepingSlotsCount);
+			yield return Toils_Reserve.Reserve (ipartner, 1, 0);
+			yield return Toils_Reserve.Reserve (ibed, Bed.SleepingSlotsCount, 0);
 			Toil get_loved = Toils_LayDown.LayDown (ibed, true, false, false, false);
 			get_loved.FailOn (() => (Partner.CurJob == null) || (Partner.CurJob.def != xxx.nymph_rapin));
 			get_loved.defaultCompleteMode = ToilCompleteMode.Never;

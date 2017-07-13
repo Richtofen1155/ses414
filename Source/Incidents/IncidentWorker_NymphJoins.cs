@@ -29,12 +29,22 @@ namespace rjw {
 		
 		public override bool TryExecute (IncidentParms parms)
 		{
-			if (!HugsLibInj.nymphos)
+            //Log.Message("IncidentWorker_NymphJoins::TryExecute() called");
+
+            if (!HugsLibInj.nymphos)
 			{
 				return false;
 			}
 
-			var m = (Map)parms.target;
+			var m = parms.target as Map;
+
+            if (m == null) {
+                Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is null, abort!");
+                return false;
+            } else {
+                Log.Message("IncidentWorker_NymphJoins::TryExecute() - map is ok");
+            }
+
 			
 			IntVec3 loc;
 			if (! CellFinder.TryFindRandomEdgeCellWith (m.reachability.CanReachColony, m, 1.0f, out loc)) // TODO check this ROADCHANCE

@@ -78,7 +78,7 @@ namespace rjw {
 		
 		protected override IEnumerable<Toil> MakeNewToils ()
 		{
-            Log.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
+            //Log.Message("[RJW] JobDriver_RandomRape::MakeNewToils() called");
 			duration = (int)(2500.0f * Rand.Range (0.50f, 0.90f));
 			ticks_between_hearts = Rand.RangeInclusive (70, 130);
 			ticks_between_hits = Rand.Range (xxx.config.min_ticks_between_hits, xxx.config.max_ticks_between_hits);
@@ -91,14 +91,13 @@ namespace rjw {
 			
 			this.FailOnDespawnedNullOrForbidden (iprisoner);
             this.FailOn(() => (!Prisoner.health.capacities.CanBeAwake)); // || (!comfort_prisoners.is_designated (Prisoner)));
-            this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner)); // Fail if someone else reserves the prisoner before the pawn arrives
-            //this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, -1, null, true)); // ok if someone else reserves the prisoner before the pawn arrives
+            this.FailOn(() => !pawn.CanReserve(Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0)); // Fail if someone else reserves the prisoner before the pawn arrives
             yield return Toils_Goto.GotoThing (iprisoner, PathEndMode.OnCell);
 
 
             var rape = new Toil ();
 			rape.initAction = delegate {
-				pawn.Reserve (Prisoner, comfort_prisoners.max_rapists_per_prisoner);
+				pawn.Reserve (Prisoner, comfort_prisoners.max_rapists_per_prisoner, 0);
 
                 //// Trying to add some interactions and social logs
                 //InteractionDef intDef = DefDatabase<InteractionDef>.GetNamed("AnalRaped");

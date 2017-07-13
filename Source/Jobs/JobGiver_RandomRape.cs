@@ -32,7 +32,7 @@ namespace rjw {
 			Pawn best_rapee = null;
 			var best_fuckability = 0.20f; // Don't rape prisoners with <20% fuckability
             foreach (var target in m.mapPawns.AllPawns) {
-                if (target != rapist && rapist.CanReserve( target, comfort_prisoners.max_rapists_per_prisoner) && !target.Position.IsForbidden(rapist) && is_healthy_enough(target)) {
+                if (target != rapist && rapist.CanReserve( target, comfort_prisoners.max_rapists_per_prisoner, 0) && !target.Position.IsForbidden(rapist) && is_healthy_enough(target)) {
                     if (!xxx.is_animal(target) || (xxx.is_animal(target) && xxx.config.animals_enabled)) {
                         var fuc = xxx.would_fuck(rapist, target, true);
                         if ((fuc > best_fuckability) && (Rand.Value < 0.9 * fuc)) {
@@ -47,7 +47,7 @@ namespace rjw {
 
 		protected override Job TryGiveJob (Pawn p)
 		{
-            Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) called");
+            //Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) called");
 
 			if ((Find.TickManager.TicksGame >= p.mindState.canLovinTick) && (p.CurJob == null)) {
 				
@@ -58,10 +58,10 @@ namespace rjw {
 
 
                     if (prisoner != null) {
-                        Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
+                        //Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - found victim " + prisoner.NameStringShort);
                         return new Job(DefDatabase<JobDef>.GetNamed("RandomRape"), prisoner);
                     } else {
-                        Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
+                        //Log.Message("[RJW] JobGiver_RandomRape::TryGiveJob( " + p.NameStringShort + " ) - unable to find victim");
                         p.mindState.canLovinTick = Find.TickManager.TicksGame + Rand.Range(75, 150);
                     }
 					

@@ -578,6 +578,11 @@ namespace rjw
         // Should be called after "pawn" has fucked "partner"
         // "rapist" can be set to either "pawn" or "partner", or null if no rape occurred
         public static void aftersex(Pawn pawn, Pawn partner, Pawn rapist = null) {
+            if (rapist != null) {
+                //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + ", " + rapist.NameStringShort + " ) called");
+            } else {
+                //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + " ) called");
+            }
             // Roll for and apply food poisoning from rimming
             if ((rapist != pawn) &&
                 (Rand.Value < xxx.config.chance_to_rim) &&
@@ -595,6 +600,7 @@ namespace rjw
                 SoundDef.Named("Cum").PlayOneShot(new TargetInfo(partner.Position, pawn.Map, false));
             }
 
+            //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + " ) - applying cum effect");
             if (xxx.config.cum_enabled) {
                 if (xxx.is_animal(pawn)) {
                     FilthMaker.MakeFilth(pawn.PositionHeld, pawn.MapHeld, cum, pawn.LabelIndefinite(), 3);
@@ -602,9 +608,12 @@ namespace rjw
                 FilthMaker.MakeFilth(pawn.PositionHeld, pawn.MapHeld, cum, pawn.LabelIndefinite(), (int)(pawn.RaceProps.lifeExpectancy / pawn.ageTracker.AgeBiologicalYears));
             }
 
+            //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + " ) - checking satisfaction");
             satisfy(pawn, partner, rapist);
+            //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + " ) - checking thoughts");
             think_after_sex(pawn, partner, rapist);
 
+            //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + " ) - checking pregnancy");
             if (pawn.gender == Gender.Female && partner.gender == Gender.Male) {
                 try {
                     impregnate(pawn, partner);
@@ -613,19 +622,23 @@ namespace rjw
                 }
             }
 
+            //Log.Message("xxx::aftersex( " + pawn.NameStringShort + ", " + partner.NameStringShort + " ) - checking disease");
             std.roll_to_catch(pawn, partner);
         }
 
         public static void impregnate(Pawn female, Pawn male) {
+            //Log.Message("xxx::impregnate( " + female.NameStringShort + ", " + male.NameStringShort + " ) called");
             BodyPartRecord torso = female.RaceProps.body.AllParts.Find(x => x.def == BodyPartDefOf.Torso);
             HediffDef contraceptive = HediffDef.Named("Contraceptive");
 
             // Make sure the woman is not pregnanct and not using a contraceptive
+            //Log.Message("xxx::impregnate( " + female.NameStringShort + ", " + male.NameStringShort + " ) - checking for contraceptives");
             if (female.health.hediffSet.HasHediff(HediffDefOf.Pregnant, torso) || female.health.hediffSet.HasHediff(contraceptive, null) || male.health.hediffSet.HasHediff(contraceptive, null)) {
                 return;
             }
             // Check the pawn's age to see how likely it is she can carry a fetus
             // 25 and below is guaranteed, 50 and above is impossible, 37.5 is 50% chance
+            //Log.Message("xxx::impregnate( " + female.NameStringShort + ", " + male.NameStringShort + " ) - checking age");
             float preg_chance = Math.Max(1 - (Math.Max(female.ageTracker.AgeBiologicalYearsFloat - 25, 0) / 25), 0) * 0.33f;
             float rand_value = Rand.Value;
             if (preg_chance < rand_value) {
@@ -641,13 +654,14 @@ namespace rjw
 
             // Do the actual impregnation. We apply it to the torso because Remove_Hediff in operations doesn't work on WholeBody (null body part)
             // for whatever reason.
+            //Log.Message("xxx::impregnate( " + female.NameStringShort + ", " + male.NameStringShort + " ) - applying pregnancy");
             Hediff_HumanPregnancy hediff_Pregnant = (Hediff_HumanPregnancy)HediffMaker.MakeHediff(HediffDef.Named("HumanPregnancy"), female, torso);
             hediff_Pregnant.father = male;
             female.health.AddHediff(hediff_Pregnant, torso, null);
         }
 
         public static bool AttemptAnalRape(Pawn rapist, Pawn victim) {
-            Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
+            //Log.Message(rapist.NameStringShort + " is attempting to anally rape " + victim.NameStringShort);
             return true;
         }
     }

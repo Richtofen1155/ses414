@@ -9,9 +9,9 @@ using RimWorld;
 namespace rjw {
 	public class JobGiver_ViolateCorpse : ThinkNode_JobGiver {
 
-         public static Thing find_corpse( Pawn rapist, Map m) {
-            Log.Message("JobGiver_ViolateCorpse::find_corpse( " + rapist.NameStringShort + " ) called");
-            Thing found = null;
+         public static Corpse find_corpse( Pawn rapist, Map m) {
+            //Log.Message("JobGiver_ViolateCorpse::find_corpse( " + rapist.NameStringShort + " ) called");
+            Corpse found = null;
             var best_distance = 1.0e6f;
             int best_freshness = 100;
 
@@ -19,12 +19,12 @@ namespace rjw {
             foreach (Thing thing in m.listerThings.ThingsOfDef(ThingDef.Named("Human_Corpse"))) {
                 //Log.Message(rapist.NameStringShort + " found a corpse with id " + thing.Label);
                 Corpse corpse = thing as Corpse;
-                if (rapist.CanReserve(thing, 1)) {
+                if (rapist.CanReserve(thing, 1, 0)) {
                     int freshness = corpse.GetRotStage().ChangeType<int>();
                     var distance = rapist.Position.DistanceToSquared(thing.Position);
                     //Log.Message("   " + corpse.InnerPawn.NameStringShort + " =  " + freshness + "/" + distance + ",  best =  " + best_freshness + "/" + best_distance);
                     if (freshness < best_freshness || (freshness <= best_freshness && distance < best_distance)) {
-                        found = thing;
+                        found = corpse;
                         best_freshness = freshness;
                         best_distance = distance;
                     }

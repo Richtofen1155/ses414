@@ -35,14 +35,16 @@ namespace rjw {
 		
 		protected override IEnumerable<Toil> MakeNewToils ()
 		{
+            //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() called");
 			this.FailOnDespawnedOrNull (ipartner);
 			this.FailOnDespawnedOrNull (ibed);
 			this.FailOn (() => ! Partner.health.capacities.CanBeAwake);
 			this.FailOn (() => ! xxx.is_laying_down_alone (Partner));
-			yield return Toils_Reserve.Reserve (ipartner, 1);
+            yield return Toils_Reserve.Reserve(ipartner, comfort_prisoners.max_rapists_per_prisoner, 0);
 			yield return Toils_Goto.GotoThing (ipartner, PathEndMode.OnCell);
 			yield return new Toil {
 				initAction = delegate {
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting initAction");
 					ticks_left = (int)(2500.0f * Rand.Range (0.30f, 1.30f));
 					var gettin_loved = new Job (xxx.gettin_loved, pawn, Bed);
 					Partner.jobs.StartJob (gettin_loved, JobCondition.InterruptForced, null, false, true, null);
@@ -63,14 +65,27 @@ namespace rjw {
 			yield return do_lovin;
 			yield return new Toil {
 				initAction = delegate {
-					var sex_mem = (Thought_Memory)ThoughtMaker.MakeThought (ThoughtDefOf.GotSomeLovin);
-					pawn.needs.mood.thoughts.memories.TryGainMemory (sex_mem, Partner);
-					var sex_mem2 = (Thought_Memory)ThoughtMaker.MakeThought (ThoughtDefOf.GotSomeLovin); // Is this neccessary?
-					Partner.needs.mood.thoughts.memories.TryGainMemory (sex_mem2, pawn);
-					xxx.aftersex (pawn, Partner);
-					xxx.aftersex (Partner, pawn);
-					pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (pawn);
-					Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (Partner);
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting pawn.got_some_lovin memory in second initAction");
+                    var sex_mem = (Thought_Memory)ThoughtMaker.MakeThought (ThoughtDefOf.GotSomeLovin);
+                    var pawn_memories = pawn.needs.mood.thoughts.memories as MemoryThoughtHandler;
+                    if (pawn_memories != null) {
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(sex_mem, Partner);
+                    }
+
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting Partner.got_some_lovin memory in second initAction");
+                    var sex_mem2 = (Thought_Memory)ThoughtMaker.MakeThought (ThoughtDefOf.GotSomeLovin); // Is this neccessary?
+                    if (Partner.needs != null && Partner.needs.mood != null && Partner.needs.mood.thoughts != null) {
+                        Partner.needs.mood.thoughts.memories.TryGainMemory(sex_mem2, pawn);
+                    }
+
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - calling aftersex in second initAction");
+                    xxx.aftersex (pawn, Partner);
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - calling aftersex again in second initAction");
+                    xxx.aftersex (Partner, pawn);
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting mindstate in second initAction");
+                    pawn.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (pawn);
+                    //Log.Message("JobDriver_NymphJoinInBed::MakeNewToils() - setting mindstate again in second initAction");
+                    Partner.mindState.canLovinTick = Find.TickManager.TicksGame + xxx.generate_min_ticks_to_next_lovin (Partner);
 				},
 				defaultCompleteMode = ToilCompleteMode.Instant
 			};

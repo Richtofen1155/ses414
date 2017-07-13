@@ -2,6 +2,7 @@ v1.3 to v1.4:
   - Refactored source files
   - Added chinese translations by Alanetsai
   - Adjusted selection criteria to prefer fresh corpses
+  - Fixed apparel bug with animal attackers
 
 v1.2 to v1.3:
   - Added breast and anus body parts, along with hydraulic/bionic alternatives

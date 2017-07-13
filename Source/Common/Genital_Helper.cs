@@ -265,19 +265,19 @@ namespace rjw
         }
 
         public static void add_breasts(Pawn pawn) {
-            Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) called");
+            //Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) called");
             BodyPartRecord breastsPart = get_breasts(pawn);
 
             if (breastsPart == null) {
-                Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn doesn't have a breastsPart");
+                //Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn doesn't have a breastsPart");
                 return;
             }
             if (has_breasts(pawn)) {
-                Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn already has breasts");
+                //Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - pawn already has breasts");
                 return;
             }
 
-            Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - checking gender");
+            //Log.Message("[RJW] add_breasts( " + pawn.NameStringShort + " ) - checking gender");
 
             if (pawn.gender == Gender.Female) {
                 HediffDef bewbs;
