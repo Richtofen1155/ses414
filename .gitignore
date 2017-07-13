@@ -6,12 +6,12 @@
 *.user
 *.userosscache
 *.sln.docstates
-Assemblies/*.pdb
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
 # Build results
+Assemblies/*.pdb
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/

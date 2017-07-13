@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<rep>
+		<path>MakeHydraulicVagina.label</path>
+		<trans>用鋼鐵製作假陰道</trans>
+	</rep>
+	<rep>
+		<path>MakePegDick.label</path>
+		<trans>用木頭雕刻假陰莖</trans>
+	</rep>
+		<rep>
+		<path>MakeBionicVagina.label</path>
+		<trans>製作仿生陰道</trans>
+	</rep>
+						<rep>
+		<path>MakeBionicPenis.label</path>
+		<trans>製作仿生陰莖</trans>
+	</rep>
+</LanguageData>

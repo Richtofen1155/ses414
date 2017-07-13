@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>Source</RootNamespace>
+    <RootNamespace>rjw</RootNamespace>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <NoWin32Manifest>False</NoWin32Manifest>
@@ -49,7 +49,7 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\Assemblies</OutputPath>
+    <OutputPath>Assemblies\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HugsLib">
@@ -70,77 +70,78 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Building_Bed_Patch.cs" />
-    <Compile Include="Source\Building_WhoreBed.cs" />
-    <Compile Include="Source\config.cs" />
-    <Compile Include="Source\Genital_Helper.cs" />
-    <Compile Include="Source\Hediff_InitPrivates.cs" />
-    <Compile Include="Source\HugsLibInj.cs" />
-    <Compile Include="Source\InteractionWorker_AnalRapeAttempt.cs" />
-    <Compile Include="Source\JobDriver_ComfortPrisonerRapin.cs" />
-    <Compile Include="Source\JobDriver_GettinRaped.cs" />
-    <Compile Include="Source\JobDriver_RandomRape.cs" />
-    <Compile Include="Source\JobDriver_ViolateCorpse.cs" />
-    <Compile Include="Source\JobGiver_ComfortPrisonerRape.cs" />
-    <Compile Include="Source\JobGiver_RandomRape.cs" />
-    <Compile Include="Source\JobGiver_ViolateCorpse.cs" />
-    <Compile Include="Source\MapCom_Injector.cs" />
-    <Compile Include="Source\comfort_prisoners.cs" />
-    <Compile Include="Source\Designator_ComfortPrisoner.cs" />
-    <Compile Include="Source\Hediff_ID.cs" />
-    <Compile Include="Source\IncidentWorker_NymphJoins.cs" />
-    <Compile Include="Source\IncidentWorker_Sexualize.cs" />
-    <Compile Include="Source\nymph_generator.cs" />
-    <Compile Include="Source\nymph_backstories.cs" />
-    <Compile Include="Source\CORE_EXPOSED.cs" />
-    <Compile Include="Source\chastity_belt.cs" />
-    <Compile Include="Source\patches_bondage_gear.cs" />
-    <Compile Include="Source\patches_lovin.cs" />
-    <Compile Include="Source\PawnCapacityWorker_Fertility.cs" />
-    <Compile Include="Source\Recipe_InstallAnus.cs" />
-    <Compile Include="Source\Recipe_InstallBreasts_Female.cs" />
-    <Compile Include="Source\Recipe_InstallPrivates_Female.cs" />
-    <Compile Include="Source\Recipe_InstallPrivates_Male.cs" />
-    <Compile Include="Source\Recipe_Nullify.cs" />
-    <Compile Include="Source\bondage_gear.cs" />
-    <Compile Include="Source\Recipe_RemoveAnus.cs" />
-    <Compile Include="Source\Recipe_RemoveBreasts.cs" />
-    <Compile Include="Source\std.cs" />
-    <Compile Include="Source\ThinkNode_ChancePerHour_Necro.cs" />
-    <Compile Include="Source\ThinkNode_ChancePerHour_RandomRape.cs" />
-    <Compile Include="Source\ThinkNode_ChancePerHour_RapeCP.cs" />
-    <Compile Include="Source\ThinkNode_ConditionalCanRapeCP.cs" />
-    <Compile Include="Source\ThinkNode_ConditionalFrustrated.cs" />
-    <Compile Include="Source\ThinkNode_ConditionalNecro.cs" />
-    <Compile Include="Source\ThinkNode_ConditionalRapist.cs" />
-    <Compile Include="Source\ThoughtWorker_ItchyCrotch.cs" />
-    <Compile Include="Source\ThoughtWorker_SyphiliticThoughts.cs" />
-    <Compile Include="Source\ThoughtWorker_WastingAway.cs" />
-    <Compile Include="Source\xxx.cs" />
-    <Compile Include="Source\First.cs" />
-    <Compile Include="Source\Hediff_InvisibleImplant.cs" />
-    <Compile Include="Source\IncidentWorker_TestInc.cs" />
-    <Compile Include="Source\JobDriver_Fappin.cs" />
-    <Compile Include="Source\JobDriver_GettinLoved.cs" />
-    <Compile Include="Source\JobDriver_LovinPP.cs" />
-    <Compile Include="Source\JobDriver_NymphJoinInBed.cs" />
-    <Compile Include="Source\JobGiver_DoFappin.cs" />
-    <Compile Include="Source\JobGiver_NymphJoinInBed.cs" />
-    <Compile Include="Source\Need_Sex.cs" />
+    <Compile Include="Source\Harmony\Building_Bed_Patch.cs" />
+    <Compile Include="Source\Things\Building_WhoreBed.cs" />
+    <Compile Include="Source\Common\config.cs" />
+    <Compile Include="Source\Common\Genital_Helper.cs" />
+    <Compile Include="Source\Hediffs\Hediff_InitPrivates.cs" />
+    <Compile Include="Source\Common\HugsLibInj.cs" />
+    <Compile Include="Source\Thoughts\InteractionWorker_AnalRapeAttempt.cs" />
+    <Compile Include="Source\Jobs\JobDriver_ComfortPrisonerRapin.cs" />
+    <Compile Include="Source\Jobs\JobDriver_GettinRaped.cs" />
+    <Compile Include="Source\Jobs\JobDriver_RandomRape.cs" />
+    <Compile Include="Source\Jobs\JobDriver_ViolateCorpse.cs" />
+    <Compile Include="Source\Jobs\JobGiver_ComfortPrisonerRape.cs" />
+    <Compile Include="Source\Jobs\JobGiver_RandomRape.cs" />
+    <Compile Include="Source\Jobs\JobGiver_ViolateCorpse.cs" />
+    <Compile Include="Source\Common\MapCom_Injector.cs" />
+    <Compile Include="Source\Common\comfort_prisoners.cs" />
+    <Compile Include="Source\Common\Designator_ComfortPrisoner.cs" />
+    <Compile Include="Source\Hediffs\Hediff_ID.cs" />
+    <Compile Include="Source\Incidents\IncidentWorker_NymphJoins.cs" />
+    <Compile Include="Source\Incidents\IncidentWorker_Sexualize.cs" />
+    <Compile Include="Source\Pawns\nymph_generator.cs" />
+    <Compile Include="Source\Pawns\nymph_backstories.cs" />
+    <Compile Include="Source\Common\CORE_EXPOSED.cs" />
+    <Compile Include="Source\Recipes\chastity_belt.cs" />
+    <Compile Include="Source\Harmony\patches_bondage_gear.cs" />
+    <Compile Include="Source\Harmony\patches_lovin.cs" />
+    <Compile Include="Source\Needs\PawnCapacityWorker_Fertility.cs" />
+    <Compile Include="Source\Recipes\Recipe_InstallAnus.cs" />
+    <Compile Include="Source\Recipes\Recipe_InstallBreasts_Female.cs" />
+    <Compile Include="Source\Recipes\Recipe_InstallPrivates_Female.cs" />
+    <Compile Include="Source\Recipes\Recipe_InstallPrivates_Male.cs" />
+    <Compile Include="Source\Recipes\Recipe_Nullify.cs" />
+    <Compile Include="Source\Common\bondage_gear.cs" />
+    <Compile Include="Source\Recipes\Recipe_RemoveAnus.cs" />
+    <Compile Include="Source\Recipes\Recipe_RemoveBreasts.cs" />
+    <Compile Include="Source\Common\std.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ChancePerHour_Necro.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ChancePerHour_RandomRape.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ChancePerHour_RapeCP.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalCanRapeCP.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalFrustrated.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalNecro.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalRapist.cs" />
+    <Compile Include="Source\Thoughts\ThoughtWorker_ItchyCrotch.cs" />
+    <Compile Include="Source\Thoughts\ThoughtWorker_SyphiliticThoughts.cs" />
+    <Compile Include="Source\Thoughts\ThoughtWorker_WastingAway.cs" />
+    <Compile Include="Source\Common\xxx.cs" />
+    <Compile Include="Source\Harmony\First.cs" />
+    <Compile Include="Source\Hediffs\Hediff_InvisibleImplant.cs" />
+    <Compile Include="Source\Incidents\IncidentWorker_TestInc.cs" />
+    <Compile Include="Source\Jobs\JobDriver_Fappin.cs" />
+    <Compile Include="Source\Jobs\JobDriver_GettinLoved.cs" />
+    <Compile Include="Source\Jobs\JobDriver_LovinPP.cs" />
+    <Compile Include="Source\Jobs\JobDriver_NymphJoinInBed.cs" />
+    <Compile Include="Source\Jobs\JobGiver_DoFappin.cs" />
+    <Compile Include="Source\Jobs\JobGiver_NymphJoinInBed.cs" />
+    <Compile Include="Source\Needs\Need_Sex.cs" />
     <Compile Include="Source\Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\ThinkNode_ChancePerHour_Fappin.cs" />
-    <Compile Include="Source\ThinkNode_ConditionalHorny.cs" />
-    <Compile Include="Source\ThinkNode_ConditionalNympho.cs" />
-    <Compile Include="Source\ThoughtWorker_NeedSex.cs" />
-    <Compile Include="Source\CompUnlockBondageGear.cs" />
-    <Compile Include="Source\CompStampedApparelKey.cs" />
-    <Compile Include="Source\JobDriver_StruggleInBondageGear.cs" />
-    <Compile Include="Source\CompHoloCryptoStamped.cs" />
-    <Compile Include="Source\CompBondageGear.cs" />
-    <Compile Include="Source\CompGetBondageGear.cs" />
-    <Compile Include="Source\JobDriver_UseItemOn.cs" />
-    <Compile Include="Source\ThoughtWorker_Bound.cs" />
-    <Compile Include="Source\Recipe_ForceOffGear.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ChancePerHour_Fappin.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalHorny.cs" />
+    <Compile Include="Source\Thoughts\ThinkNode_ConditionalNympho.cs" />
+    <Compile Include="Source\Thoughts\ThoughtWorker_NeedSex.cs" />
+    <Compile Include="Source\Things\CompUnlockBondageGear.cs" />
+    <Compile Include="Source\Things\CompStampedApparelKey.cs" />
+    <Compile Include="Source\Jobs\JobDriver_StruggleInBondageGear.cs" />
+    <Compile Include="Source\Things\CompHoloCryptoStamped.cs" />
+    <Compile Include="Source\Things\CompBondageGear.cs" />
+    <Compile Include="Source\Things\CompGetBondageGear.cs" />
+    <Compile Include="Source\Jobs\JobDriver_UseItemOn.cs" />
+    <Compile Include="Source\Thoughts\ThoughtWorker_Bound.cs" />
+    <Compile Include="Source\Recipes\Recipe_ForceOffGear.cs" />
+    <Compile Include="Source\Common\Verb_Fuck.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About\About.xml" />
@@ -230,6 +231,7 @@
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /E /Y "C:\Projects\RimWorld\RJW" "C:\Games\steam\steamapps\common\RimWorld\Mods\RJW\"

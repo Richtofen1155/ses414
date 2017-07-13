@@ -1,3 +1,8 @@
+v1.3 to v1.4:
+  - Refactored source files
+  - Added chinese translations
+  - Adjusted selection criteria to prefer fresh corpses
+
 v1.2 to v1.3:
   - Added breast and anus body parts, along with hydraulic/bionic alternatives
   - Added necrophilia

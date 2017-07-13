@@ -27,17 +27,18 @@ namespace rjw {
 			return (! p.Dead) && p.health.capacities.CanBeAwake && (p.health.hediffSet.BleedRateTotal <= 0.0f) && xxx.can_get_raped(p);
 		}
 		
-		public static Pawn find_prisoner_to_rape (Pawn rapist, Map m)
+		public static Pawn find_victim (Pawn rapist, Map m)
 		{
-			List<Designation> invalid_designations = null;
 			Pawn best_rapee = null;
 			var best_fuckability = 0.20f; // Don't rape prisoners with <20% fuckability
             foreach (var target in m.mapPawns.AllPawns) {
                 if (target != rapist && rapist.CanReserve( target, comfort_prisoners.max_rapists_per_prisoner) && !target.Position.IsForbidden(rapist) && is_healthy_enough(target)) {
-                    var fuc = xxx.would_fuck(rapist, target, true);
-                    if ((fuc > best_fuckability) && (Rand.Value < 0.9 * fuc)) {
-                        best_rapee = target;
-                        best_fuckability = fuc;
+                    if (!xxx.is_animal(target) || (xxx.is_animal(target) && xxx.config.animals_enabled)) {
+                        var fuc = xxx.would_fuck(rapist, target, true);
+                        if ((fuc > best_fuckability) && (Rand.Value < 0.9 * fuc)) {
+                            best_rapee = target;
+                            best_fuckability = fuc;
+                        }
                     }
                 }
             }
@@ -53,7 +54,7 @@ namespace rjw {
                 // don't allow pawns marked as comfort prisoners to rape others
 				if (p.health.capacities.CanBeAwake && xxx.can_fuck (p)) {
 				
-					var prisoner = find_prisoner_to_rape(p, p.Map);
+					var prisoner = find_victim(p, p.Map);
 
 
                     if (prisoner != null) {
