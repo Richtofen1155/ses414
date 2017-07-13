@@ -1,6 +1,6 @@
 v1.3 to v1.4:
   - Refactored source files
-  - Added chinese translations
+  - Added chinese translations by Alanetsai
   - Adjusted selection criteria to prefer fresh corpses
 
 v1.2 to v1.3:
