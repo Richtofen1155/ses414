@@ -114,11 +114,12 @@ namespace rjw {
 					dri.increase_time (duration);
 				}
 
-                // Try to take off the attacker's clothing
+                // Try to take off the attacker's clothing and add to inventory
                 worn_apparel = pawn.apparel.WornApparel.ListFullCopy<Apparel>();
                 while (pawn.apparel != null && pawn.apparel.WornApparelCount > 0) {
                     Apparel apparel = pawn.apparel.WornApparel.RandomElement<Apparel>();
                     pawn.apparel.Remove(apparel);
+                    pawn.inventory.innerContainer.TryAdd(apparel);
                 }
                 //pawn.apparel.WornApparel.RemoveAll(null);
 
@@ -158,7 +159,7 @@ namespace rjw {
 
                     if (pawn.apparel != null) {
                         foreach (Apparel apparel in worn_apparel) {
-                            pawn.apparel.Wear(apparel);//  WornApparel.Add(apparel);
+                            pawn.apparel.Wear(apparel);
                         }
                     }
                 },
